@@ -1,0 +1,222 @@
+scripted_map_modes = {
+	ob_rebel_agitation = {
+	# the game will use name of the map mode for some strings:
+	# MAPMODE_TEST_MAP_MODE MAPMODE_TEST_MAP_MODE_NAME MAPMODE_TEST_MAP_MODE_DESCRIPTION as name & desc
+	# test_map_mode_tooltip & test_map_mode_tooltip_delayed for tooltips
+	# GFX_mapmode_buttons_deselected_small_test_map_mode GFX_mapmode_buttons_selected_small_test_map_mode for the icons
+
+	# there are two layers for a map mode. bottom & top
+	# both are same except during rendering they will be rendered in that order
+	# for each layer the game will figure out what borders to render and will ask script to pick a color for those
+	top = {
+		type = none
+	}
+
+	bottom = {
+		# same structure as top
+		type = country
+
+		color = {
+			set_temp_variable = { red = 0 }
+			set_temp_variable = { green = 0 }
+			set_temp_variable = { blue = 0 }
+			set_temp_variable = { alpha = 1 }
+
+			FROM = {
+				#green
+				if = {
+					limit = {
+						check_variable = { rebel_agitation < 0.5 }
+					}
+					set_temp_variable = { agitation = rebel_agitation }
+					multiply_temp_variable = { agitation = 3 }
+					add_to_temp_variable = { agitation = 0.25 }
+					set_temp_variable = { green = agitation }
+				}
+				else = {
+					set_temp_variable = { agitation = rebel_agitation }
+					subtract_from_temp_variable = { agitation = 0.75 }
+					multiply_temp_variable = { agitation = -4 }
+					set_temp_variable = { green = agitation }
+				}
+
+				if = {
+					limit = {
+						check_variable = { rebel_agitation < 0.75 }
+					}
+					set_temp_variable = { agitation = rebel_agitation }
+					subtract_from_temp_variable = { agitation = 0.25 }
+					multiply_temp_variable = { agitation = 4 }
+					set_temp_variable = { red = agitation }
+				}
+				else = {
+					set_temp_variable = { agitation = rebel_agitation }
+					subtract_from_temp_variable = { agitation = 1 }
+					multiply_temp_variable = { agitation = -3 }
+					add_to_temp_variable = { agitation = 0.25 }
+					set_temp_variable = { red = agitation }
+				}
+
+				if = {
+					limit = {
+						NOT = { has_government = combine }
+					}
+					set_temp_variable = { red = 0.5 }
+					set_temp_variable = { green = 0.5 }
+					set_temp_variable = { blue = 0.5 }
+					set_temp_variable = { alpha = 0.25 }
+				}
+			}
+		}
+	}
+
+
+	# if we want to show texts on map this you can set far_text & near_text
+	# must be one of the:
+	#  none
+	#  country
+	#  state
+	#  faction
+	#  player
+
+	far_text = country
+
+	# if yes, the game will update the map mode daily_update
+	# otherwise force_update_map_mode effect can be used
+	update_daily = yes
+
+	}
+
+	ob_average_ideology = {
+		# the game will use name of the map mode for some strings:
+		# MAPMODE_TEST_MAP_MODE MAPMODE_TEST_MAP_MODE_NAME MAPMODE_TEST_MAP_MODE_DESCRIPTION as name & desc
+		# test_map_mode_tooltip & test_map_mode_tooltip_delayed for tooltips
+		# GFX_mapmode_buttons_deselected_small_test_map_mode GFX_mapmode_buttons_selected_small_test_map_mode for the icons
+	
+		# there are two layers for a map mode. bottom & top
+		# both are same except during rendering they will be rendered in that order
+		# for each layer the game will figure out what borders to render and will ask script to pick a color for those
+		top = {
+			type = none
+		}
+	
+		bottom = {
+			# same structure as top
+			type = country
+	
+			color = {
+				set_temp_variable = { red = 0 }
+				set_temp_variable = { green = 0 }
+				set_temp_variable = { blue = 0 }
+				set_temp_variable = { alpha = 1 }
+
+				FROM = {
+					# 42 42 169
+					set_temp_variable = { combine_red = 42 }
+					set_temp_variable = { combine_blue = 169 }
+					divide_temp_variable = { combine_red = 255 }
+					divide_temp_variable = { combine_blue = 255 }
+					multiply_temp_variable = { combine_red = party_popularity@combine }
+					multiply_temp_variable = { combine_blue = party_popularity@combine }
+
+					# 255 128 42
+					set_temp_variable = { resistance_red = 255 }
+					set_temp_variable = { resistance_green = 128 }
+					set_temp_variable = { resistance_blue = 42 }
+					divide_temp_variable = { resistance_red = 255 }
+					divide_temp_variable = { resistance_green = 255 }
+					divide_temp_variable = { resistance_blue = 255 }
+					multiply_temp_variable = { resistance_red = party_popularity@resistance_ideology }
+					multiply_temp_variable = { resistance_green = party_popularity@resistance_ideology }
+					multiply_temp_variable = { resistance_blue = party_popularity@resistance_ideology }
+
+					# 255 64 64
+					set_temp_variable = { socialism_red = 255 }
+					set_temp_variable = { socialism_green = 64 }
+					divide_temp_variable = { socialism_red = 255 }
+					divide_temp_variable = { socialism_green = 255 }
+					multiply_temp_variable = { socialism_red = party_popularity@socialism }
+					multiply_temp_variable = { socialism_green = party_popularity@socialism }
+
+					# 255 0 0 
+					set_temp_variable = { authcom_red = 255 }
+					divide_temp_variable = { authcom_red = 255 }
+					multiply_temp_variable = { authcom_red = party_popularity@authoritarian_communism }
+
+					# 196 0 0 
+					set_temp_variable = { libcom_red = 196 }
+					divide_temp_variable = { libcom_red = 255 }
+					multiply_temp_variable = { libcom_red = party_popularity@libertarian_communism }
+
+					# 255 255 0 
+					set_temp_variable = { lib_red = 255 }
+					divide_temp_variable = { lib_red = 255 }
+					multiply_temp_variable = { lib_red = party_popularity@liberalism }
+
+					# 64 64 196
+					set_temp_variable = { conservatism_red = 64 }
+					set_temp_variable = { conservatism_blue = 196 }
+					divide_temp_variable = { conservatism_red = 255 }
+					divide_temp_variable = { conservatism_blue = 255 }
+					multiply_temp_variable = { conservatism_red = party_popularity@conservatism }
+					multiply_temp_variable = { conservatism_blue = party_popularity@conservatism }
+
+					# 128 128 128 
+					set_temp_variable = { oligarchy_red = 128 }
+					divide_temp_variable = { oligarchy_red = 255 }
+					multiply_temp_variable = { oligarchy_red = party_popularity@oligarchism }
+
+					# 128 96 32
+					set_temp_variable = { fash_red = 128 }
+					set_temp_variable = { fash_green = 96 }
+					set_temp_variable = { fash_blue = 32 }
+					divide_temp_variable = { fash_red = 255 }
+					divide_temp_variable = { fash_green = 255 }
+					divide_temp_variable = { fash_blue = 255 }
+					multiply_temp_variable = { fash_red = party_popularity@fascism }
+					multiply_temp_variable = { fash_green = party_popularity@fascism }
+					multiply_temp_variable = { fash_blue = party_popularity@fascism }
+
+					# ADD IT ALL UP!
+					add_to_temp_variable = { red = combine_red }
+					add_to_temp_variable = { red = resistance_red }
+					add_to_temp_variable = { red = socialism_red }
+					add_to_temp_variable = { red = authcom_red }
+					add_to_temp_variable = { red = libcom_red }
+					add_to_temp_variable = { red = lib_red }
+					add_to_temp_variable = { red = conservatism_red }
+					add_to_temp_variable = { red = oligarchy_red }
+					add_to_temp_variable = { red = fash_red }
+					add_to_temp_variable = { green = combine_red }
+					add_to_temp_variable = { green = resistance_green }
+					add_to_temp_variable = { green = socialism_green }
+					add_to_temp_variable = { green = lib_red }
+					add_to_temp_variable = { green = conservatism_red }
+					add_to_temp_variable = { green = oligarchy_red }
+					add_to_temp_variable = { green = fash_green }
+					add_to_temp_variable = { blue = combine_blue }
+					add_to_temp_variable = { blue = resistance_blue }
+					add_to_temp_variable = { blue = socialism_green }
+					add_to_temp_variable = { blue = conservatism_blue }
+					add_to_temp_variable = { blue = oligarchy_red }
+					add_to_temp_variable = { blue = fash_blue }
+				}
+			}
+		}
+	
+	
+		# if we want to show texts on map this you can set far_text & near_text
+		# must be one of the:
+		#  none
+		#  country
+		#  state
+		#  faction
+		#  player
+	
+		far_text = country
+	
+		# if yes, the game will update the map mode daily_update
+		# otherwise force_update_map_mode effect can be used
+		update_daily = yes
+	}
+}

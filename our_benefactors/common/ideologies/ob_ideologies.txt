@@ -1,4 +1,6 @@
 ideologies = {
+	# HEYYYYYY!!!!! UP HERE!!!! If you are going to add or remove ideologies, PLEASE update ob_map_modes.txt in common/map_modes for ob_average_ideology.
+	
 	combine = {
 		types = {
 			progenitorate = {

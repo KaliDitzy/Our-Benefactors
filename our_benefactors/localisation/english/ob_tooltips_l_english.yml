@@ -15,3 +15,5 @@
   REBEL_AGITATION_BECOMES: "Rebel §YAgitation§! will become §Y[?tooltip_value|1%]§!."
   S17_vault_attack: "§YThe Battle of the Vault§! has happened."
   was_combine_capital: "Was a Combine Capital"
+  ob_rebel_agitation_tooltip: "Rebel Agitation represents the activity of rebel groups within a Combine nation."
+  ob_rebel_agitation_tooltip_delayed: "Dark Green: 0%\nLight Green: 25%\nYellow: 50%\nRed: 75%\nDark Red: 100%"

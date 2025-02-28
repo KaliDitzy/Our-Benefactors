@@ -79,6 +79,21 @@ on_actions = {
 				}
 				add_dynamic_modifier = { modifier = suppression_fields }
 			}
+
+			set_temp_variable_to_random = temp_random
+			if = {
+				limit = {
+					has_government = combine
+					check_variable = { temp_random > 0.6 }
+				}
+				add_to_variable = { rebel_agitation = 0.001 }
+				if = {
+					limit = {
+						check_variable = { rebel_agitation > 1 }
+					}
+					set_variable = { rebel_agitation = 1 }
+				}
+			}
 		}
 	}
 }
