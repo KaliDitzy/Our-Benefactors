@@ -1,0 +1,30 @@
+bookmarks = {
+	bookmark = {
+		name = "2015_NAME"
+		desc = "2015_DESC"
+		date = 2015.1.1.12
+		picture = "GFX_select_date_2015"
+		default_country = "S17"
+	
+		S17 = {
+			history = S17_2015_DESC
+			ideology = combine
+			ideas = {
+				FAKE_suppression_fields
+			}
+			focuses = {
+				S17_the_citadel
+				S17_the_vault
+			}
+		}
+
+		"---"={
+			history = "OTHER_2015_DESC"
+		}
+
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

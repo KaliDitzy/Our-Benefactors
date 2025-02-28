@@ -1,0 +1,32 @@
+leader_traits = {
+	combine_benefactor = {
+		random = no
+		sprite = 13
+
+		combine_drift = 0.05
+	}
+	passive_revolutionary = {
+		random = no
+		sprite = 13
+
+		combine_drift = -0.025
+	}
+	rebel_sympathizer = {
+		random = no
+		sprite = 13
+
+		resistance_ideology_drift = 0.05
+	}
+	revolutionary_physicist = {
+		random = no
+		sprite = 14
+
+		research_speed_factor = 0.15
+	}
+	the_one_free_man = {
+		random = no
+		sprite = 5
+
+		experience_gain_army = 0.1
+	}
+}

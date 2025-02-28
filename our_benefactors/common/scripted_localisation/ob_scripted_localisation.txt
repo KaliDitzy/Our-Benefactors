@@ -1,0 +1,18 @@
+defined_text = {
+    name = agitation_level
+    text = {
+        localization_key = LOW_AGITATION
+    }
+    text = {
+        trigger = {
+            NOT = { check_variable = { rebel_agitation < 0.333333 } }
+        }
+        localization_key = MED_AGITATION
+    }
+    text = {
+        trigger = {
+            NOT = { check_variable = { rebel_agitation < 0.666666 } }
+        }
+        localization_key = HI_AGITATION
+    }
+}

@@ -1,0 +1,92 @@
+# For minor countries where advisors are not defined
+# Generate them from a generic template
+
+# Political advisors
+every_possible_country = {
+	limit = {
+		has_government = combine
+	}
+	generate_character = {
+		token_base = generic_combine_benefactor # token will be TAG_token_base
+		advisor = {
+			cost = 50
+			slot = political_advisor
+			traits = { combine_benefactor }
+			visible = {
+				NOT = { has_government = resistance_ideology }
+			}
+			available = {
+				hidden_trigger = {
+					NOT = { has_government = resistance_ideology }
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					stability < 0.4
+				}
+			}
+		}
+		portraits = { 
+			civilian = { small = GFX_portrait_generic_combine_advisor }
+		}
+	}
+	if = {
+		limit = {
+			NOT = { tag = S17 }
+		}
+	}
+	generate_character = {
+		token_base = generic_rebel_sympathizer # token will be TAG_token_base
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			traits = { rebel_sympathizer }
+			visible = {
+				has_government = combine
+			}
+			available = {
+				hidden_trigger = {
+					has_government = combine
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					stability > 0.5
+				}
+			}
+		}
+		portraits = { 
+			civilian = { small = GFX_portrait_generic_rebel_advisor }
+		}
+	}
+	generate_character = {
+		token_base = generic_passive_revolutionary # token will be TAG_token_base
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			traits = { passive_revolutionary }
+			visible = {
+				has_government = combine
+			}
+			available = {
+				hidden_trigger = {
+					has_government = combine
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					stability > 0.6
+				}
+			}
+		}
+		portraits = { 
+			civilian = { small = GFX_portrait_generic_rebel_advisor }
+		}
+	}
+}

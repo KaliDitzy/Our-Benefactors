@@ -1,0 +1,84 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_possible_country = {
+				add_dynamic_modifier = { modifier = the_citadel }
+				add_dynamic_modifier = { modifier = suppression_fields }
+			}
+			every_country = {
+				if = {
+					limit = {
+						NOT = { num_divisions > 0 }
+					}
+					if = {
+						limit = {
+							NOT = { has_template = "Placeholder Infantry" }
+						}
+						division_template = {
+							name = "Placeholder Infantry"
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 2 y = 1 }
+							}
+						}
+					}
+					capital_scope = {
+						create_unit = { 
+							division = "name = \"Placeholder Infantry\" division_template = \"Placeholder Infantry\" start_experience_factor = 5.0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"Placeholder Infantry\" division_template = \"Placeholder Infantry\" start_experience_factor = 5.0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"Placeholder Infantry\" division_template = \"Placeholder Infantry\" start_experience_factor = 5.0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"Placeholder Infantry\" division_template = \"Placeholder Infantry\" start_experience_factor = 5.0" 
+							owner = PREV
+						}
+					}
+				}
+				capital_scope = {
+					set_state_flag = was_combine_capital
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				set_variable = { recently_at_war = 180 }
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = { recently_at_war > 0 }
+					}
+					subtract_from_variable = { recently_at_war = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_dynamic_modifier = { modifier = the_citadel } }
+				}
+				add_dynamic_modifier = { modifier = the_citadel }
+			}
+			if = {
+				limit = {
+					NOT = { has_dynamic_modifier = { modifier = suppression_fields } }
+				}
+				add_dynamic_modifier = { modifier = suppression_fields }
+			}
+		}
+	}
+}

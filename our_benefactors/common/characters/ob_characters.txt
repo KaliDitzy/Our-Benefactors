@@ -1,0 +1,104 @@
+characters = {
+	S17_wallace_breen = {
+		name = S17_wallace_breen
+        portraits = {
+            civilian = {
+                large = "GFX_portrait_S17_wallace_breen"
+            }
+        }
+        country_leader = {
+            ideology = central_government
+            desc = S17_wallace_breen_desc
+            traits = {
+                eager_collaborator
+                idealistic
+            }
+        }
+	}
+    S17_eli_vance = {
+		name = S17_eli_vance
+        portraits = {
+            civilian = {
+                large = "GFX_portrait_S17_eli_vance"
+            }
+        }
+        country_leader = {
+            ideology = lambda
+            desc = S17_eli_vance_desc
+        }
+	}
+    S17_isaac_kleiner = {
+		name = S17_isaac_kleiner
+        portraits = {
+            civilian = {
+                large = "GFX_portrait_S17_isaac_kleiner"
+                small = "GFX_portrait_S17_isaac_kleiner_advisor"
+            }
+        }
+        country_leader = {
+            ideology = lambda
+            desc = S17_isaac_kleiner_desc
+            traits = { revolutionary_physicist }
+        }
+        advisor = {
+            cost = 100
+            slot = political_advisor
+			idea_token = S17_isaac_kleiner
+			allowed = {
+                original_tag = S17
+            }
+			visible = {
+                NOT = {
+                    has_government = combine
+                }
+			}
+			available = {
+				NOT = {
+                    has_country_leader = {
+                        character = S17_isaac_kleiner
+                        ruling_only = yes
+                    }
+                }
+			}
+			traits = { revolutionary_physicist }
+        }
+	}
+    S17_gordon_freeman = {
+		name = S17_gordon_freeman
+        portraits = {
+            civilian = {
+                large = "GFX_portrait_S17_gordon_freeman"
+            }
+        }
+        country_leader = {
+            ideology = lambda
+            desc = S17_gordon_freeman_desc
+            traits = { the_one_free_man }
+        }
+        advisor = {
+            cost = 150
+            slot = political_advisor
+			idea_token = S17_isaac_kleiner
+			allowed = {
+                original_tag = S17
+            }
+			visible = {
+                NOT = {
+                    has_government = combine
+                }
+                has_country_leader = {
+                    character = S17_gordon_freeman
+                }
+			}
+			available = {
+				NOT = {
+                    has_country_leader = {
+                        character = S17_gordon_freeman
+                        ruling_only = yes
+                    }
+                }
+			}
+			traits = { the_one_free_man }
+        }
+	}
+}

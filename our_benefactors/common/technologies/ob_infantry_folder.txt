@@ -1,0 +1,91 @@
+technologies = {
+
+	@2000 = 0
+	@2015 = 3
+	@2018 = 6
+	@2023 = 9
+	@2025 = 12
+	@2028 = 15
+
+	infantry_equipment = {
+		enable_equipments = {
+			early_2000s_equipment
+		}
+
+		enable_subunits = {
+			infantry
+		}
+
+		path = {
+			leads_to_tech = infantry_equipment1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 0.66
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = -1 y = @2000 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	infantry_equipment1 = {
+
+		enable_equipments = {
+			prototype_combine_equipment
+		}
+
+		path = {
+			leads_to_tech = infantry_equipment2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2015
+		folder = {
+			name = infantry_folder
+			position = { x = -1 y = @2015 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	infantry_equipment2 = {
+
+		enable_equipments = {
+			combine_equipment
+		}
+
+		path = {
+			#leads_to_tech = infantry_weapons1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.33
+		start_year = 2018
+		folder = {
+			name = infantry_folder
+			position = { x = -1 y = @2018 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

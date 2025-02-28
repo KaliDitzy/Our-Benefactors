@@ -1,0 +1,320 @@
+focus_tree = {
+    id = S17_focus_tree_combine
+    country = {
+        base = 0
+        modifier = {
+            add = 10
+            original_tag = S17
+			has_government = combine
+        }
+    }
+	reset_on_civilwar = no
+    continuous_focus_position = { x = 450 y = 800 }
+    initial_show_position = { focus = S17_begin_politics }
+	focus = {
+        id = S17_combine_projects
+		relative_position_id = S17_begin_politics
+		x = -4
+		y = 0
+		cost = 10
+		available = {
+			has_government = combine
+		}
+
+		completion_reward = {
+			add_political_power = 25
+		}
+    }
+    focus = {
+        id = S17_begin_politics
+		x = 10
+		y = 0
+		cost = 10
+
+		completion_reward = {
+			add_political_power = 25
+		}
+    }
+	focus = {
+        id = S17_domestic_concerns
+		prerequisite = {
+			focus = S17_begin_politics
+		}
+		relative_position_id = S17_begin_politics
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_political_power = 25
+		}
+    }
+	focus = {
+        id = S17_our_benefactors
+		prerequisite = {
+			focus = S17_begin_politics
+		}
+		relative_position_id = S17_begin_politics
+		x = -2
+		y = 2
+		cost = 10
+		available = {
+			has_government = combine
+		}
+
+		completion_reward = {
+			add_political_power = 25
+		}
+    }
+	focus = {
+        id = S17_our_oppressors
+		prerequisite = {
+			focus = S17_begin_politics
+		}
+		relative_position_id = S17_begin_politics
+		x = 2
+		y = 2
+		cost = 10
+
+		completion_reward = {
+			add_political_power = 25
+		}
+    }
+	focus = {
+        id = S17_resistance_crackdown
+		prerequisite = {
+			focus = S17_our_benefactors
+		}
+		prerequisite = {
+			focus = S17_domestic_concerns
+		}
+		mutually_exclusive = {
+			focus = S17_resistance_cells
+		}
+		relative_position_id = S17_domestic_concerns
+		x = -1
+		y = 2
+		cost = 10
+		available = {
+			has_government = combine
+		}
+
+		completion_reward = {
+			add_dynamic_modifier = { modifier = resistance_crackdowns }
+			set_temp_variable = { tooltip_value = 0.2 }
+			multiply_temp_variable = { tooltip_value = party_popularity@combine }
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_INCREASE
+			}
+			add_to_variable = { rebel_agitation = tooltip_value }
+			if = {
+				limit = {
+					check_variable = { rebel_agitation > 1 }
+				}
+				set_variable = { rebel_agitation = 1 }
+			}
+		}
+    }
+	focus = {
+        id = S17_the_citadel
+		prerequisite = {
+			focus = S17_our_benefactors
+		}
+		prerequisite = {
+			focus = S17_combine_projects
+		}
+		relative_position_id = S17_combine_projects
+		x = 1
+		y = 3
+		cost = 10
+		available = {
+			has_government = combine
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = CITADEL_CONSTRUCTION_BEGIN
+			}
+			808 = {
+				set_state_flag = building_citadel
+				set_variable = { citadel_progress = 0 }
+				set_variable = { citadel_progress_efficiency = 0.2 }
+			}
+		}
+    }
+	focus = {
+        id = S17_mass_imprisonment
+		prerequisite = {
+			focus = S17_expand_nova_prospekt
+		}
+		prerequisite = {
+			focus = S17_resistance_crackdown
+		}
+		relative_position_id = S17_resistance_crackdown
+		x = -1
+		y = 2
+		cost = 10
+
+		available = {
+			has_government = combine
+			custom_trigger_tooltip = {
+				tooltip = CITADEL_PROGRESS_50
+				NOT = { check_variable = { citadel_progress < 0.5 } }
+			}
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = resistance_ideology
+				popularity = -0.15
+			}
+		}
+    }
+	focus = {
+        id = S17_the_vault
+		prerequisite = {
+			focus = S17_combine_projects
+		}
+		relative_position_id = S17_combine_projects
+		x = -3
+		y = 2
+		cost = 10
+
+		available = {
+			has_government = combine
+			set_temp_variable = { tooltip_value = 0.25 }
+			custom_trigger_tooltip = {
+				tooltip = CITADEL_PROGRESS
+				NOT = { check_variable = { 808.citadel_progress < tooltip_value } }
+			}
+		}
+		completion_reward = {
+			add_ideas = the_vault
+		}
+    }
+	focus = {
+        id = S17_mobile_camps
+		prerequisite = {
+			focus = S17_the_vault
+		}
+		mutually_exclusive = {
+			focus = S17_research_site
+		}
+		relative_position_id = S17_the_vault
+		x = -1
+		y = 1
+		cost = 10
+		available = {
+			has_government = combine
+			has_idea = the_vault
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = the_vault
+				add_idea = the_vault_prison
+			}
+		}
+    }
+	focus = {
+        id = S17_research_site
+		prerequisite = {
+			focus = S17_the_vault
+		}
+		mutually_exclusive = {
+			focus = S17_mobile_camps
+		}
+		relative_position_id = S17_the_vault
+		x = 1
+		y = 1
+		cost = 10
+		available = {
+			has_government = combine
+			has_idea = the_vault
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = the_vault
+				add_idea = the_vault_research
+			}
+		}
+    }
+	focus = {
+        id = S17_expand_nova_prospekt
+		prerequisite = {
+			focus = S17_combine_projects
+		}
+		relative_position_id = S17_combine_projects
+		x = 0
+		y = 4
+		cost = 10
+
+		available = {
+			has_government = combine
+			set_temp_variable = { tooltip_value = 0.5 }
+			custom_trigger_tooltip = {
+				tooltip = CITADEL_PROGRESS
+				NOT = { check_variable = { 808.citadel_progress < tooltip_value } }
+			}
+		}
+		completion_reward = {
+			add_political_power = 25
+		}
+    }
+	focus = {
+        id = S17_resistance_cells
+		prerequisite = {
+			focus = S17_our_oppressors
+		}
+		prerequisite = {
+			focus = S17_domestic_concerns
+		}
+		mutually_exclusive = {
+			focus = S17_resistance_crackdown
+		}
+		relative_position_id = S17_domestic_concerns
+		x = 1
+		y = 2
+		cost = 10
+		bypass = {
+			NOT = { has_government = combine }
+		}
+
+		completion_reward = {
+			add_dynamic_modifier = { modifier = resistance_cells }
+			set_temp_variable = { tooltip_value = 0.2 }
+			multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_DECREASE
+			}
+			subtract_from_variable = { rebel_agitation = tooltip_value }
+			if = {
+				limit = {
+					check_variable = { rebel_agitation < 0 }
+				}
+				set_variable = { rebel_agitation = 0 }
+			}
+		}
+    }
+	focus = {
+        id = S17_destroy_the_vault
+		prerequisite = {
+			focus = S17_resistance_cells
+		}
+		relative_position_id = S17_resistance_cells
+		x = 0
+		y = 2
+		cost = 10
+		bypass = {
+			NOT = { has_government = combine }
+		}
+
+		available = {
+			has_idea = the_vault
+			NOT = { has_country_flag = S17_vault_attack }
+		}
+		completion_reward = {
+			country_event = major_resistance_events.1
+		}
+    }
+}

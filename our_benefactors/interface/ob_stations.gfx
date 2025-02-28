@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_radio_hl1_songs"
+		texturefile = "gfx/interface/topbar/musicplayer/hl1_songs.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_radio_hl2_songs"
+		texturefile = "gfx/interface/topbar/musicplayer/hl2_songs.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_radio_episodic_songs"
+		texturefile = "gfx/interface/topbar/musicplayer/episodic_songs.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_radio_alyx_songs"
+		texturefile = "gfx/interface/topbar/musicplayer/alyx_songs.dds"
+		noOfFrames = 2
+	}
+}

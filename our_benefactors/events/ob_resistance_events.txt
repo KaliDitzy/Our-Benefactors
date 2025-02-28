@@ -1,0 +1,649 @@
+add_namespace = resistance_decisions
+
+country_event = {
+	id = resistance_decisions.1
+    title = resistance_decisions.1.t
+    desc = resistance_decisions.1.d
+    
+    is_triggered_only = yes
+    
+    option = {
+        name = resistance_decisions.1a
+		set_temp_variable = { tooltip_value = 0.25 }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_BECOMES
+		}
+		set_variable = { rebel_agitation = tooltip_value }
+        start_civil_war = {
+			ideology = resistance_ideology
+			size = 0.25
+			army_ratio = 0.4
+			states_filter = {
+				is_capital = no
+			}
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_BECOMES
+			}
+			set_variable = { rebel_agitation = tooltip_value }
+			load_focus_tree = generic_focus
+		}
+		set_temp_variable = { new_popularity = 0.55 }
+		multiply_temp_variable = { new_popularity = party_popularity@resistance_ideology }
+		add_popularity = {
+			ideology = combine
+			popularity = new_popularity
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = { combine < 0.5 }
+			}
+			modifier = {
+				add = 10
+				NOT = { combine < 0.75 }
+			}
+			modifier = {
+				add = 10
+				NOT = { combine < 0.875 }
+			}
+			modifier = {
+				add = 20
+				NOT = {
+					OR = {
+						tag = S17
+					}
+				}
+			}
+		}
+    }
+
+	option = {
+        name = resistance_decisions.1b
+		set_temp_variable = { tooltip_value = 0.25 }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_BECOMES
+		}
+		set_variable = { rebel_agitation = tooltip_value }
+        start_civil_war = {
+			ruling_party = resistance_ideology
+			ideology = combine
+			size = 0.75
+			army_ratio = 0.4
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_BECOMES
+			}
+			set_variable = { rebel_agitation = tooltip_value }
+		}
+		set_temp_variable = { new_popularity = 0.55 }
+		multiply_temp_variable = { new_popularity = party_popularity@combine }
+		add_popularity = {
+			ideology = resistance_ideology
+			popularity = new_popularity
+		}
+		remove_ideas = {
+			the_vault
+			the_vault_research
+			the_vault_prison
+		}
+		every_enemy_country = {
+			limit = {
+				has_defensive_war_with = PREV
+			}
+			white_peace = PREV
+		}
+		load_focus_tree = generic_focus
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				combine < 0.5
+			}
+			modifier = {
+				add = 10
+				combine < 0.25
+			}
+			modifier = {
+				add = 10
+				combine < 0.125
+			}
+		}
+    }
+}
+
+add_namespace = resistance_events
+
+country_event = {
+	id = resistance_events.1
+    title = resistance_events.1.t
+    desc = resistance_events.1.d
+
+	trigger = {
+		has_government = combine
+	}
+    
+    mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.75
+			has_stability < 0.5
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.25
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.125
+		}
+		modifier = {
+			factor = 0.5
+			has_war = yes
+		}
+		modifier = {
+			factor = 4
+			has_civil_war = yes
+		}
+	}
+    
+    option = {
+        name = resistance_events.1a
+		set_temp_variable = { tooltip_value = 0.04 }
+		multiply_temp_variable = { tooltip_value = party_popularity@combine }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_DECREASE_FACTOR
+		}
+		set_temp_variable = { actual_value = 1 }
+		subtract_from_temp_variable = { actual_value = tooltip_value }
+		multiply_variable = { rebel_agitation = actual_value }
+		if = {
+			limit = {
+				check_variable = { rebel_agitation < 0 }
+			}
+			set_variable = { rebel_agitation = 0 }
+		}
+		add_popularity = {
+			ideology = resistance_ideology
+			popularity = 0.025
+		}
+    }
+
+	option = {
+        name = resistance_events.1b
+		add_political_power = -25
+		set_temp_variable = { tooltip_value = 0.075 }
+		multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_INCREASE_FACTOR
+		}
+		set_temp_variable = { actual_value = 1 }
+		add_to_temp_variable = { actual_value = tooltip_value }
+		multiply_variable = { rebel_agitation = actual_value }
+		if = {
+			limit = {
+				check_variable = { rebel_agitation > 1 }
+			}
+			set_variable = { rebel_agitation = 1 }
+		}
+		add_popularity = {
+			ideology = combine
+			popularity = 0.05
+		}
+    }
+}
+
+country_event = {
+	id = resistance_events.2
+    title = resistance_events.2.t
+    desc = resistance_events.2.d
+
+	trigger = {
+		has_government = combine
+	}
+    
+    mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 0.75
+			has_stability < 0.5
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.25
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.125
+		}
+		modifier = {
+			factor = 0.5
+			has_war = yes
+		}
+		modifier = {
+			factor = 4
+			has_civil_war = yes
+		}
+	}
+    
+    option = {
+        name = resistance_events.2a
+		set_temp_variable = { tooltip_value = 0.025 }
+		multiply_temp_variable = { tooltip_value = party_popularity@combine }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_DECREASE_FACTOR
+		}
+		set_temp_variable = { actual_value = 1 }
+		subtract_from_temp_variable = { actual_value = tooltip_value }
+		multiply_variable = { rebel_agitation = actual_value }
+		if = {
+			limit = {
+				check_variable = { rebel_agitation < 0 }
+			}
+			set_variable = { rebel_agitation = 0 }
+		}
+		add_popularity = {
+			ideology = resistance_ideology
+			popularity = 0.075
+		}
+    }
+
+	option = {
+        name = resistance_events.2b
+		add_political_power = -50
+		set_temp_variable = { tooltip_value = 0.05 }
+		multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_INCREASE_FACTOR
+		}
+		set_temp_variable = { actual_value = 1 }
+		add_to_temp_variable = { actual_value = tooltip_value }
+		multiply_variable = { rebel_agitation = actual_value }
+		if = {
+			limit = {
+				check_variable = { rebel_agitation > 1 }
+			}
+			set_variable = { rebel_agitation = 1 }
+		}
+		add_popularity = {
+			ideology = combine
+			popularity = 0.05
+		}
+    }
+}
+
+country_event = {
+	id = resistance_events.3
+    title = resistance_events.3.t
+    desc = resistance_events.3.d
+
+	trigger = {
+		has_government = combine
+		NOT = { check_variable = { rebel_agitation > 0 } }
+	}
+    
+    mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.75
+			has_stability < 0.5
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.25
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.125
+		}
+		modifier = {
+			factor = 0.5
+			has_war = yes
+		}
+		modifier = {
+			factor = 3
+			has_civil_war = yes
+		}
+	}
+    
+    option = {
+        name = resistance_events.3a
+		set_temp_variable = { tooltip_value = 0.05 }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_DECREASE
+		}
+		add_to_variable = { rebel_agitation = tooltip_value }
+    }
+}
+
+country_event = { # unavoidable agitation
+	id = resistance_events.4
+    title = resistance_events.4.t
+    desc = resistance_events.4.d
+
+	trigger = {
+		has_government = combine
+		check_variable = { rebel_agitation < 0.75 }
+		check_variable = { party_popularity@resistance_ideology > 0 }
+	}
+    
+    mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.25
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.5
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.75
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.875
+		}
+		modifier = {
+			factor = 0.5
+			has_war = yes
+		}
+		modifier = {
+			factor = 3
+			has_civil_war = yes
+		}
+	}
+    
+    option = {
+        name = resistance_events.4a
+		add_political_power = -25
+		set_temp_variable = { tooltip_value = 0.1 }
+		multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_INCREASE
+		}
+		add_to_variable = { rebel_agitation = tooltip_value }
+    }
+}
+
+country_event = { # unavoidable resistance
+	id = resistance_events.5
+    title = resistance_events.5.t
+    desc = resistance_events.5.d
+
+	trigger = {
+		has_government = combine
+	}
+    
+    mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.75
+			check_variable = { rebel_agitation > 0.125 }
+		}
+		modifier = {
+			factor = 0.75
+			check_variable = { rebel_agitation > 0.25 }
+		}
+		modifier = {
+			factor = 0.75
+			check_variable = { rebel_agitation > 0.5 }
+		}
+		modifier = {
+			factor = 0.75
+			check_variable = { rebel_agitation > 0.75 }
+		}
+		modifier = {
+			factor = 0.75
+			check_variable = { rebel_agitation > 0.875 }
+		}
+		modifier = {
+			factor = 0.5
+			has_war = yes
+		}
+		modifier = {
+			factor = 3
+			has_civil_war = yes
+		}
+	}
+    
+    option = {
+        name = resistance_events.5a
+		add_political_power = -50
+		add_popularity = {
+			ideology = resistance_ideology
+			popularity = 0.1
+		}
+    }
+}
+
+country_event = { # unavoidable agitation
+	id = resistance_events.6
+    title = resistance_events.6.t
+    desc = resistance_events.6.d
+
+	trigger = {
+		has_government = combine
+		check_variable = { rebel_agitation < 0.75 }
+		check_variable = { party_popularity@resistance_ideology > 0 }
+	}
+    
+    mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.125
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.25
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.5
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.75
+		}
+		modifier = {
+			factor = 0.75
+			resistance_ideology > 0.875
+		}
+		modifier = {
+			factor = 0.5
+			has_war = yes
+		}
+		modifier = {
+			factor = 3
+			has_civil_war = yes
+		}
+	}
+    
+    option = {
+        name = resistance_events.6a
+		add_political_power = -50
+		set_temp_variable = { tooltip_value = 0.25 }
+		multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_INCREASE
+		}
+		add_to_variable = { rebel_agitation = tooltip_value }
+    }
+}
+
+add_namespace = major_resistance_events
+
+country_event = {
+	id = major_resistance_events.1
+    title = major_resistance_events.1.t
+    desc = major_resistance_events.1.d
+
+	trigger = {
+		original_tag = S17
+		has_government = combine
+		has_idea = the_vault
+
+		NOT = {
+			any_country = {
+				NOT = { has_government = combine }
+				original_tag = S17
+			}
+		}
+
+		NOT = { has_country_flag = S17_vault_attack }
+
+		date < 2020.1.1
+	}
+    
+    mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.75
+			has_stability < 0.5
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.25
+		}
+		modifier = {
+			factor = 0.75
+			has_stability < 0.125
+		}
+	}
+
+	immediate = {
+		set_country_flag = S17_vault_attack
+	}
+    
+    option = {
+        name = resistance_events.1a
+		set_temp_variable = { tooltip_value = 0.075 }
+		multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_INCREASE
+		}
+		add_to_variable = { rebel_agitation = tooltip_value }
+		if = {
+			limit = {
+				check_variable = { rebel_agitation > 1 }
+			}
+			set_variable = { rebel_agitation = 1 }
+		}
+		add_popularity = {
+			ideology = resistance_ideology
+			popularity = 0.15
+		}
+		remove_ideas = {
+			the_vault
+			the_vault_research
+			the_vault_prison
+		}
+    }
+}
+country_event = {
+	id = major_resistance_events.2
+    title = major_resistance_events.2.t
+    desc = major_resistance_events.2.d
+
+	trigger = {
+		original_tag = S17
+		has_government = combine
+		has_idea = the_vault
+
+		NOT = {
+			any_country = {
+				NOT = { has_government = combine }
+				original_tag = S17
+			}
+		}
+
+		NOT = { has_country_flag = S17_vault_attack }
+
+		date < 2020.1.1
+	}
+    
+    mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.75
+			has_stability > 0.5
+		}
+		modifier = {
+			factor = 0.75
+			has_stability > 0.75
+		}
+		modifier = {
+			factor = 0.75
+			has_stability > 0.875
+		}
+	}
+
+	immediate = {
+		set_country_flag = S17_vault_attack
+	}
+    
+    option = {
+        name = resistance_events.2a
+		set_temp_variable = { tooltip_value = 0.075 }
+		multiply_temp_variable = { tooltip_value = party_popularity@resistance_ideology }
+		custom_effect_tooltip = {
+			localization_key = REBEL_AGITATION_INCREASE
+		}
+		add_to_variable = { rebel_agitation = tooltip_value }
+		if = {
+			limit = {
+				check_variable = { rebel_agitation > 1 }
+			}
+			set_variable = { rebel_agitation = 1 }
+		}
+		add_popularity = {
+			ideology = resistance_ideology
+			popularity = -0.15
+		}
+    }
+}
+
+country_event = {
+	id = major_resistance_events.3
+    title = major_resistance_events.3.t
+    desc = major_resistance_events.3.d
+
+	trigger = {
+		NOT = {
+			has_government = combine
+			has_country_flag = refused_citadel_destruction
+			has_global_flag = citadel_destroyed
+		}
+		808 = {
+			NOT = { check_variable = { citadel_progress < 1 } }
+		}
+		controls_province = 9340
+	}
+    
+    mean_time_to_happen = {
+		days = 3
+	}
+    
+    option = {
+        name = resistance_events.2a
+		add_stability = 0.15
+		set_global_flag = citadel_destroyed
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 100
+				original_tag = S17
+			}
+		}
+    }
+
+	option = {
+        name = resistance_events.2b
+		add_stability = -0.075
+		set_country_flag = refused_citadel_destruction
+		ai_chance = {
+			base = 5
+		}
+    }
+}

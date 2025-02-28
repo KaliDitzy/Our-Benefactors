@@ -1,0 +1,38 @@
+ideas = {
+    country = {
+		the_vault = {
+			modifier = {
+				combine_drift = 0.1
+				stability_weekly = 0.01
+				resistance_growth = -0.1
+			}
+        }
+		the_vault_research = {
+			modifier = {
+				combine_drift = 0.05
+				stability_weekly = 0.01
+				resistance_growth = -0.05
+				research_speed_factor = 0.05
+			}
+        }
+		the_vault_prison = {
+			modifier = {
+				combine_drift = 0.15
+				stability_weekly = 0.01
+				resistance_growth = -0.15
+			}
+        }
+		FAKE_suppression_fields = {
+			modifier = {
+				monthly_population = -0.95
+				political_power_factor = 0.5
+			}
+		}
+		FAKE_the_citadel = {
+			modifier = {
+				political_power_factor = 0.1
+				stability_weekly = 0.005
+			}
+		}
+    }
+}

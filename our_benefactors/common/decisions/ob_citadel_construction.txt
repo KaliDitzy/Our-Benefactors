@@ -1,0 +1,82 @@
+citadel_construction = {
+	citadel_construction_phase = {
+		activation = {
+			808 = {
+				has_state_flag = building_citadel
+				check_variable = { citadel_progress < 1 }
+			}
+			controls_province = 9340
+			has_government = combine
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = CITADEL_PROGRESS_EFFICIENCY_NEGATIVE
+				808 = { check_variable = { citadel_progress_efficiency < 0 } }
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 60
+   		selectable_mission = no
+		complete_effect = {
+			808 = { clr_state_flag = building_citadel }
+			add_political_power = -300
+		}
+		timeout_effect = {
+			808 = {
+				custom_effect_tooltip = {
+					localization_key = CITADEL_PROGRESS_INCREASE
+				}
+				set_temp_variable_to_random = citadel_progress_increase
+				subtract_from_temp_variable = { citadel_progress_increase = 0.1 }
+				divide_temp_variable = { citadel_progress_increase = 10 }
+				multiply_temp_variable = { citadel_progress_increase = citadel_progress_efficiency }
+				if = {
+					limit  ={
+						OR = {
+							AND = {
+								date > 2017.1.1
+								check_variable = { citadel_progress < 0.5 }
+							}
+							AND = {
+								date > 2021.1.1
+								check_variable = { citadel_progress < 1 }
+							}
+						}
+					}
+					multiply_temp_variable = { citadel_progress_increase = 2 }
+				}
+				add_to_variable = { citadel_progress = citadel_progress_increase }
+				if = {
+					limit = {
+						check_variable = { citadel_progress > 1 }
+					}
+					set_variable = { citadel_progress = 1 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { citadel_progress < 0 }
+					}
+					set_variable = { citadel_progress = 0 }
+				}
+
+				custom_effect_tooltip = {
+					localization_key = CITADEL_PROGRESS_EFFICIENCY_INCREASE
+				}
+				set_temp_variable_to_random = citadel_progress_efficiency_increase
+				divide_temp_variable = { citadel_progress_efficiency_increase = 5 }
+				add_to_variable = { citadel_progress_efficiency = citadel_progress_efficiency_increase }
+				if = {
+					limit = {
+						check_variable = { citadel_progress_efficiency > 1 }
+					}
+					set_variable = { citadel_progress_efficiency = 1 }
+				}
+			}
+
+			custom_effect_tooltip = {
+				localization_key = FAKE_NEWLINE
+			}
+		}
+		priority = 100
+	}
+}

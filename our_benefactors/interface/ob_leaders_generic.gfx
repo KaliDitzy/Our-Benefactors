@@ -1,0 +1,18 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_combine_m_1
+        texturefile = "gfx/leaders/generic/combine_m_1.dds"
+    }
+	spriteType = {
+        name = GFX_portrait_combine_f_1
+        texturefile = "gfx/leaders/generic/combine_f_1.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_resistance_m_1
+        texturefile = "gfx/leaders/generic/resistance_m_1.dds"
+    }
+	spriteType = {
+        name = GFX_portrait_resistance_f_1
+        texturefile = "gfx/leaders/generic/resistance_f_1.dds"
+    }
+}

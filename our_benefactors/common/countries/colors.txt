@@ -1,0 +1,4 @@
+S17 = {
+	color = rgb { 163 26 67 }
+	color_ui = rgb { 107 0 11 }
+}

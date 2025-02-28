@@ -1,0 +1,22 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_ideology_combine_group
+        texturefile = "gfx/interface/ideologies/combine_group.dds"
+    }
+	spriteType = {
+        name = GFX_ideology_resistance_ideology_group
+        texturefile = "gfx/interface/ideologies/resistance_group.dds"
+    }
+	spriteType = {
+        name = GFX_ideology_lambda
+        texturefile = "gfx/interface/ideologies/lambda.dds"
+    }
+	spriteType = {
+        name = GFX_ideology_authoritarian_communism_group
+        texturefile = "gfx/interface/ideologies/communism_group.dds"
+    }
+	spriteType = {
+        name = GFX_ideology_libertarian_communism_group
+        texturefile = "gfx/interface/ideologies/anarchism.dds"
+    }
+}

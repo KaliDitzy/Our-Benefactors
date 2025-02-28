@@ -1,0 +1,6 @@
+opinion_modifiers = {
+    incompatible = {
+        value = -200
+		months = 2
+    }
+}

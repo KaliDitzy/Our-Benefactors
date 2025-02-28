@@ -1,0 +1,9 @@
+technology_categories = {
+	army_tech
+}
+
+technology_folders = {
+	infantry_folder = {
+		ledger = army
+	}
+}

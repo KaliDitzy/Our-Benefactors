@@ -1,0 +1,22 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_idea_suppression_fields
+        texturefile = "gfx/interface/ideas/suppression_fields.dds"
+    }
+	spriteType = {
+        name = GFX_idea_FAKE_suppression_fields
+        texturefile = "gfx/interface/ideas/suppression_fields.dds"
+    }
+	spriteType = {
+        name = GFX_idea_the_vault
+        texturefile = "gfx/interface/ideas/the_vault.dds"
+    }
+	spriteType = {
+        name = GFX_idea_the_vault_research
+        texturefile = "gfx/interface/ideas/the_vault.dds"
+    }
+	spriteType = {
+        name = GFX_idea_the_vault_prison
+        texturefile = "gfx/interface/ideas/the_vault.dds"
+    }
+}

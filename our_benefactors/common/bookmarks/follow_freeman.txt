@@ -1,0 +1,29 @@
+bookmarks = {
+	bookmark = {
+		name = "2023_NAME"
+		desc = "2023_DESC"
+		date = 2023.1.1.12
+		picture = "GFX_select_date_2023"
+		default_country = "S17"
+	
+		S17 = {
+			history = S17_2023_DESC
+			ideology = combine
+			ideas={
+				FAKE_suppression_fields
+				FAKE_the_citadel
+			}
+			focuses = {
+			}
+		}
+
+		"---"={
+			history = "OTHER_2023_DESC"
+		}
+
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

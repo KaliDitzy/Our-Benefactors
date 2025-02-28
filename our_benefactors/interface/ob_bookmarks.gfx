@@ -1,0 +1,14 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_select_date_2015
+        texturefile = "gfx/interface/select_date_2015.dds"
+    }
+	spriteType = {
+        name = GFX_select_date_2018
+        texturefile = "gfx/interface/select_date_2018.dds"
+    }
+	spriteType = {
+        name = GFX_select_date_2023
+        texturefile = "gfx/interface/select_date_2023.dds"
+    }
+}

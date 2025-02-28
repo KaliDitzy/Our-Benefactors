@@ -1,0 +1,159 @@
+ai_only = {
+	grr_hate_non_combine = {
+		visible = {
+			is_ai = yes
+			has_government = combine
+		}
+		available = {
+			any_other_country = {
+				NOT = { has_government = combine }
+			}
+		}
+		days_re_enable = 30
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					NOT = { has_government = combine }
+				}
+				reverse_add_opinion_modifier = {
+					target = ROOT
+					modifier = incompatible
+				}
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	grr_hate_combine = {
+		visible = {
+			is_ai = yes
+			OR = {
+				has_government = resistance_ideology
+				has_government = socialism
+				has_government = libertarian_communism
+			}
+		}
+		available = {
+			any_other_country = {
+				has_government = combine
+			}
+		}
+		days_re_enable = 30
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					has_government = combine
+				}
+				reverse_add_opinion_modifier = {
+					target = ROOT
+					modifier = incompatible
+				}
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	combine_core_cooperation = {
+		visible = {
+			is_ai = yes
+			has_government = combine
+		}
+		available = {
+			any_other_country = {
+				has_government = combine
+				PREV = {
+					any_owned_state = {
+						is_core_of = PREV.PREV
+					}
+				}
+			}
+		}
+		days_re_enable = 7
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					has_government = combine
+				}
+				PREV = {
+					every_owned_state = {
+						limit = {
+							is_core_of = PREV.PREV
+						}
+						transfer_state_to = PREV.PREV
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 30
+		}
+	}
+	combine_occupation_cooperation = {
+		visible = {
+			is_ai = yes
+			has_government = combine
+		}
+		available = {
+			any_other_country = {
+				has_government = combine
+				any_core_state = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		days_re_enable = 7
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					has_government = combine
+				}
+				PREV = {
+					every_controlled_state = {
+						limit = {
+							is_core_of = PREV.PREV
+							NOT = {
+								is_owned_by = ROOT
+							}
+						}
+						set_state_controller_to = PREV.PREV
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 30
+		}
+	}
+	unite_with_others = {
+		visible = {
+			is_ai = yes
+			any_other_country = {
+				original_tag = ROOT
+				has_government = ROOT
+			}
+		}
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					original_tag = ROOT
+					has_government = ROOT
+				}
+				PREV = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 3
+		ai_will_do = {
+			base = 10
+		}
+	}
+}

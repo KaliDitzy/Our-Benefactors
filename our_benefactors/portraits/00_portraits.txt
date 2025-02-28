@@ -1,0 +1,48 @@
+default = {
+	#navy = {
+		#male = {
+		#}
+		#female = {
+		#}
+	#}
+	
+	#army = {
+		#male = {
+		#}
+		#female = {
+		#}
+	#}
+
+	#operative = {
+		#male = {
+		#}
+		#female = {
+		#}
+	#}
+
+	male = {
+		"GFX_portrait_unknown"
+	}
+	female = {
+		"GFX_portrait_unknown_female"
+	}
+	
+	political = {
+		combine = {
+			male = {
+				"GFX_portrait_combine_m_1"
+			}
+			female = {
+				"GFX_portrait_combine_f_1"
+			}
+		}
+		resistance_ideology = {
+			male = {
+				"GFX_portrait_resistance_m_1"
+			}
+			female = {
+				"GFX_portrait_resistance_f_1"
+			}
+		}
+	}
+}

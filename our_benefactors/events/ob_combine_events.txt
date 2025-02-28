@@ -1,0 +1,24 @@
+add_namespace = citadel
+
+country_event = {
+	id = citadel.1
+    title = citadel.1.t
+    desc = citadel.1.d
+    
+    trigger = {
+		NOT = {
+			808 = {
+				check_variable = { citadel_progress < 1 }
+				has_state_flag = building_citadel
+			}
+		}
+	}
+    
+    option = {
+        name = citadel.1a
+		808 = {
+			clr_state_flag = building_citadel
+		}
+		add_stability = 0.2
+    }
+}

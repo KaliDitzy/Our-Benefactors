@@ -1,0 +1,18 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_S17_wallace_breen
+        texturefile = "gfx/leaders/S17/wallace_breen.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_S17_eli_vance
+        texturefile = "gfx/leaders/S17/eli_vance.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_S17_isaac_kleiner
+        texturefile = "gfx/leaders/S17/isaac_kleiner.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_S17_gordon_freeman
+        texturefile = "gfx/leaders/S17/gordon_freeman.dds"
+    }
+}

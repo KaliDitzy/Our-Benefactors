@@ -1,0 +1,14 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_generic_combine_advisor
+        texturefile = "gfx/interface/ideas/advisor_combine_benefactor.dds"
+    }
+	spriteType = {
+        name = GFX_portrait_generic_rebel_advisor
+        texturefile = "gfx/interface/ideas/advisor_rebel_sympathizer.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_S17_isaac_kleiner_advisor
+        texturefile = "gfx/interface/ideas/advisor_isaac_kleiner.dds"
+    }
+}

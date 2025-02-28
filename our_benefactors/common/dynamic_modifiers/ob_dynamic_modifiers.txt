@@ -1,0 +1,46 @@
+resistance_crackdowns = {
+    icon = GFX_idea_unknown
+    remove_trigger = {
+		OR = {
+			NOT = { resistance_ideology > 0.1 }
+			NOT = { has_government = combine }
+		}
+    }
+	political_power_factor = 0.1
+	stability_weekly = -0.005
+	combine_drift = 0.05
+}
+resistance_cells = {
+	icon = GFX_idea_unknown
+    remove_trigger = {
+		OR = {
+			NOT = { combine > 0.1 }
+			NOT = { has_government = combine }
+		}
+    }
+	political_power_factor = -0.1
+	stability_weekly = -0.005
+	resistance_ideology_drift = 0.05
+}
+suppression_fields = {
+	icon = GFX_idea_suppression_fields
+	enable = {
+		has_government = combine
+	}
+	monthly_population = -0.95
+	political_power_factor = 0.5
+}
+the_citadel = {
+	icon = GFX_idea_unknown
+	enable = {
+		808 = {
+			NOT = { check_variable = { citadel_progress < 1 } }
+		}
+		controls_province = 9340
+		NOT = {
+			has_global_flag = citadel_destroyed
+		}
+	}
+	political_power_factor = 0.1
+	stability_weekly = 0.005
+}

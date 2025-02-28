@@ -1,0 +1,27 @@
+capital = 64
+
+set_research_slots = 4
+set_stability = 0.8
+set_war_support = 0.5
+
+set_popularities = {
+    combine = 85
+    resistance_ideology = 15
+}
+
+set_politics = {
+    ruling_party = combine
+    last_election = "2003.6.12"
+    elections_allowed = no
+}
+
+set_technology = {
+    infantry_equipment = 1
+    infantry_equipment1 = 1
+}
+
+add_ideas = {
+    suppression_fields
+}
+
+set_variable = { rebel_agitation = 0.032 }

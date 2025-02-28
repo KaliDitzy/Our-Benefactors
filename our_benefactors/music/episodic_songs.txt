@@ -1,0 +1,22 @@
+music_station = "episodic_songs"
+
+music = {
+    song = "episodic_eine_kleiner_elevatormuzik"
+    chance = {
+        factor = 0.5
+        modifier = {
+            factor = 0
+            has_war = yes
+        }
+    }
+}
+music = {
+    song = "episodic_abandoned_in_place"
+    chance = {
+        factor = 0.5
+        modifier = {
+            factor = 0.5
+            has_war = no
+        }
+    }
+}

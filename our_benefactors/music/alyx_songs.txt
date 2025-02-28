@@ -1,0 +1,16 @@
+music_station = "alyx_songs"
+
+music = {
+    song = "alyx_hire"
+    chance = {
+        factor = 0.5
+        modifier = {
+            factor = 0
+            has_war = no
+        }
+		modifier = {
+            factor = 1.5
+            is_major = yes
+        }
+    }
+}

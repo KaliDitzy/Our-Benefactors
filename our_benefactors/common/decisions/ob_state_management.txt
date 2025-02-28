@@ -1,0 +1,26 @@
+state_management = {
+	restore_combine_capital = {
+		visible = {
+			any_owned_state = {
+				has_state_flag = was_combine_capital
+				is_capital = no
+			}
+		}
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					has_state_flag = was_combine_capital
+				}
+				PREV = {
+					set_capital = {
+						state = PREV
+					}
+				}
+			}
+		}
+		days_re_enable = 7
+		ai_will_do = {
+			base = 1
+		}
+	}
+}

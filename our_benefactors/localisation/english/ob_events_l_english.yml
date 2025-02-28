@@ -1,0 +1,48 @@
+﻿l_english:
+  resistance_decisions.1.t: "The [ROOT.GetNonIdeologyAdjectiveCap] Uprising"
+  resistance_decisions.1.d: "Recent tensions in [ROOT.GetNameDef] have come to a head, where regular citizens can no longer bear the hostilities between the local administration of [ROOT.GetLeader] and them. The crossfire between attempts at subjugating resistance members have escalated to an almost irresponsible degree, displacing families and destroying long-standing loyalties to the Combine. This is where it ends, either for the Combine's grip on the region or humanity's hopes and aspirations."
+  resistance_decisions.1a: "We shall see about that."
+  resistance_decisions.1b: "I'm afraid to say I agree."
+
+  resistance_events.1.t: "Underground Mutual-Aid Network"
+  resistance_events.1.d: "It was discovered recently by JURY units of the Civil Protection that a mutual-aid network of sorts was discovered, that some people have been hoarding rations and other valuables in forgotten infrastructure. This threatens our control over them and is subversive of our efforts."
+  resistance_events.1a: "We can afford to ignore them."
+  resistance_events.1b: "Send in Civil Protection!"
+
+  resistance_events.2.t: "Peaceful Protests"
+  resistance_events.2.d: "PATROL units report that a series of peaceful protests have been occuring, potentially put into the question the legitimacy of the Combine regime, however we have no reason to believe they will cause any long-term damage."
+  resistance_events.2a: "They have earned their words."
+  resistance_events.2b: "Perhaps re-education will change their minds."
+
+  resistance_events.3.t: "Emerging Agitation"
+  resistance_events.3.d: "It seems that a Combine regime is not unilaterally agreed upon by all, while we believe we have their best interests at heart I don't think our people see it the same way."
+  resistance_events.3a: "Oh well."
+
+  resistance_events.4.t: "Violent Instigation"
+  resistance_events.4.d: "A violent instigation of public unrest happened in [ROOT.capital.GetCapitalVictoryPointName], where hundreds have been convinced to act against us!"
+  resistance_events.4a: "Shut it down!"
+
+  resistance_events.5.t: "Vocal Outcry"
+  resistance_events.5.d: "Vocal outcry against the Combine has taken place in [ROOT.capital.GetCapitalVictoryPointName], where hundreds have been convinced to act against us!"
+  resistance_events.5a: "Shut it down!"
+
+  resistance_events.6.t: "[ROOT.capital.GetCapitalVictoryPointName] Riot"
+  resistance_events.6.d: "A mass riot has erupted all across [ROOT.capital.GetCapitalVictoryPointName], threatening the very stability of our nation."
+  resistance_events.6a: "They will pay for their violations!"
+
+  major_resistance_events.1.t: "The Battle of the Vault"
+  major_resistance_events.1.d: "In City 17, a resistance group led by what appears to be former Black Mesa researcher Eli Vance and his daughter Alyx Vance have attacked and subsequently destroyed the vault we so carefully built. Their motivations for attacking the vault are unknown, but it appears that for now they have caused a serious blow to our maneuvers."
+  major_resistance_events.1a: "Vance..."
+
+  major_resistance_events.2.t: "The Battle of the Vault"
+  major_resistance_events.2.d: "In City 17, a resistance group led by what appears to be former Black Mesa researcher Eli Vance and his daughter Alyx Vance attempted to attack and subsequently destroy the vault we so carefully built. Their motivations for attacking the vault are unknown, but it appears that for now they have not made significant cause for concern."
+  major_resistance_events.2a: "Eli..."
+
+  major_resistance_events.3.t: "Citadel Destruction Opportunity"
+  major_resistance_events.3.d: "We have a unique opportunity to destroy the pride and joy of the Combine occupation on Earth, as well as their most important source of influence and decay upon Humanity. We could destroy it and free our people of its shadow or perhaps weaponize it for our own gain."
+  major_resistance_events.3a: "Destroy it!"
+  major_resistance_events.3b: "Let's keep it."
+
+  citadel.1.t: "The Citadel is Complete"
+  citadel.1.d: "Our efforts have not gone to waste, and the citadel has been built to completion. Hopefully it will serve as a powerful beacon of our influence and the Combine's dominion over Earth."
+  citadel.1a: "Indeed."

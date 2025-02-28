@@ -1,0 +1,17 @@
+ai_only = {
+	visible = {
+		is_ai = yes
+	}
+}
+citadel_construction = {
+	visible = {
+		has_government = combine
+	}
+}
+resistance_groups = {
+	visible = {
+		has_government = combine
+	}
+}
+state_management = {
+}

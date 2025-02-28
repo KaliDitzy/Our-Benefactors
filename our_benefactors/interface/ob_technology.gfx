@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+        name = GFX_infantry_equipment_medium
+        texturefile = "gfx/interface/technologies/early_2000s_equipment.dds"
+    }
+	spriteType = {
+        name = GFX_infantry_equipment1_medium
+        texturefile = "gfx/interface/technologies/prototype_combine_equipment.dds"
+    }
+    spriteType = {
+        name = GFX_infantry_equipment2_medium
+        texturefile = "gfx/interface/technologies/combine_equipment.dds"
+    }
+}

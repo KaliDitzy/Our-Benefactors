@@ -1,0 +1,12 @@
+music_station = "hl2_songs"
+
+music = {
+    song = "hl2_hard_fought"
+    chance = {
+        factor = 0.5
+        modifier = {
+            factor = 0
+            has_war = no
+        }
+    }
+}

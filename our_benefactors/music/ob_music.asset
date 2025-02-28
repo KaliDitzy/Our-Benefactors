@@ -1,0 +1,32 @@
+## Half-Life 1
+music = {
+    name = "maintheme"
+    file = "hl1_black_mesa_inbound.ogg"
+    volume = 0.65
+}
+
+## Half-Life 2
+music = {
+    name = "hl2_hard_fought"
+    file = "hl2_hard_fought.ogg"
+    volume = 0.65
+}
+
+## Half-Life 2: Episodic
+music = {
+    name = "episodic_eine_kleiner_elevatormuzik"
+    file = "episodic_eine_kleiner_elevatormuzik.ogg"
+    volume = 1
+}
+music = {
+    name = "episodic_abandoned_in_place"
+    file = "episodic_abandoned_in_place.ogg"
+    volume = 0.65
+}
+
+## Half-Life: Alyx
+music = {
+    name = "alyx_hire"
+    file = "alyx_hire.ogg"
+    volume = 0.65
+}

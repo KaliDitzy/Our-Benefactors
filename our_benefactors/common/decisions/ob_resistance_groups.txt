@@ -1,0 +1,217 @@
+resistance_groups = {
+	agitate_the_resistance = {
+		visible = {
+			has_government = combine
+			check_variable = { rebel_agitation < 1 }
+		}
+		available = {
+			combine < 0.67
+		}
+		days_re_enable = 30
+		cost = 50
+		complete_effect = {
+			set_temp_variable = { calculation = rebel_agitation } # this is the value its changing from
+			set_temp_variable = { new_value = party_popularity@resistance_ideology }
+			add_to_temp_variable = { new_value = 1 }
+			multiply_temp_variable = { calculation = new_value }
+			set_temp_variable = { tooltip_value = calculation }
+			subtract_from_temp_variable = { tooltip_value = rebel_agitation }
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_INCREASE
+			}
+			multiply_variable = { rebel_agitation = new_value }
+			if = {
+				limit = {
+					check_variable = { rebel_agitation > 1 }
+				}
+				set_variable = { rebel_agitation = 1 }
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = -1
+				OR = {
+					NOT = { combine < 0.45 }
+					has_civil_war = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				check_variable = { rebel_agitation < 0.25 }
+			}
+			modifier = {
+				factor = 2
+				check_variable = { rebel_agitation < 0.5 }
+			}
+			modifier = {
+				factor = 2
+				check_variable = { rebel_agitation < 0.75 }
+			}
+			modifier = {
+				factor = 2
+				check_variable = { rebel_agitation < 1 }
+			}
+		}
+		priority = 100
+	}
+	suppress_the_resistance = {
+		visible = {
+			has_government = combine
+			check_variable = { rebel_agitation > 0 }
+		}
+		available = {
+			resistance_ideology < 0.67
+		}
+		days_re_enable = 90
+		cost = 100
+		complete_effect = {
+			set_temp_variable = { calculation = rebel_agitation } # this is the value its changing from
+			set_temp_variable = { new_value = 1 }
+			subtract_from_temp_variable = { new_value = party_popularity@combine }
+			multiply_temp_variable = { calculation = new_value }
+			set_temp_variable = { tooltip_value = rebel_agitation }
+			subtract_from_temp_variable = { tooltip_value = calculation }
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_DECREASE
+			}
+			multiply_variable = { rebel_agitation = new_value }
+			if = {
+				limit = {
+					check_variable = { rebel_agitation < 0 }
+				}
+				set_variable = { rebel_agitation = 0 }
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = -1
+				OR = {
+					check_variable = { rebel_agitation < 0.25 }
+					combine < 0.45
+				}
+				has_civil_war = no
+			}
+			modifier = {
+				factor = 2
+				NOT = { check_variable = { rebel_agitation < 0.5 } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { check_variable = { rebel_agitation < 0.75 } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { check_variable = { rebel_agitation < 1 } }
+			}
+		}
+		priority = 100
+	}
+	imminent_uprising = {
+		activation = {
+			set_temp_variable = { tooltip_value = 0.75 }
+			custom_trigger_tooltip = {
+				tooltip = REBEL_AGITATION_GREATER_THAN_OR_EQUAL
+				NOT = { check_variable = { rebel_agitation < tooltip_value } }
+			}
+			has_government = combine
+			has_civil_war = no
+		}
+		available = {
+			set_temp_variable = { tooltip_value = 0.75 }
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = REBEL_AGITATION_LESS_THAN
+					check_variable = { rebel_agitation < tooltip_value }
+				}
+				NOT = { has_government = combine }
+			}
+		}
+		is_good = no
+		days_mission_timeout = 180
+		timeout_effect = {
+			set_temp_variable = { tooltip_value = 0.25 }
+			custom_effect_tooltip = {
+				localization_key = REBEL_AGITATION_BECOMES
+			}
+			set_variable = { rebel_agitation = 0.25 }
+			country_event = resistance_decisions.1
+		}
+		priority = 1000
+	}
+	intervene_in_resistance = {
+		visible = {
+			any_other_country = {
+				has_government = combine
+				has_civil_war = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		available = {
+			any_other_country = {
+				has_government = resistance_ideology
+				has_civil_war = yes
+				is_neighbor_of = ROOT
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		days_re_enable = 30
+		cost = 50
+		complete_effect = {
+			every_neighbor_country = {
+				limit = {
+					has_government = resistance_ideology
+					has_civil_war = yes
+					NOT = { has_war_with = ROOT }
+				}
+				PREV = {
+					declare_war_on = {
+						target = PREV
+						type = topple_government
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { recently_at_war > 0 }
+			}
+		}
+	}
+	crush_resistance = {
+		visible = {
+			any_neighbor_country = {
+				has_government = resistance_ideology
+				NOT = { has_war_with = ROOT }
+				has_civil_war = no
+			}
+		}
+		days_re_enable = 30
+		cost = 100
+		complete_effect = {
+			every_neighbor_country = {
+				limit = {
+					has_government = resistance_ideology
+					NOT = { has_war_with = ROOT }
+					has_civil_war = no
+				}
+				PREV = {
+					declare_war_on = {
+						target = PREV
+						type = topple_government
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				factor = 0
+				check_variable = { recently_at_war > 0 }
+			}
+		}
+	}
+}

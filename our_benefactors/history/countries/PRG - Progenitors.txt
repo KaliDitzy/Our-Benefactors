@@ -1,0 +1,15 @@
+capital = 69
+set_research_slots = 6
+set_stability = 1
+set_war_support = 1
+
+set_popularities = {
+    combine = 100
+}
+
+set_politics = {
+    ruling_party = combine
+    elections_allowed = no
+}
+
+set_variable = { rebel_agitation = 0 }

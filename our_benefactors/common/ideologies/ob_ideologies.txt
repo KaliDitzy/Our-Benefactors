@@ -1,0 +1,557 @@
+ideologies = {
+	combine = {
+		types = {
+			progenitorate = {
+				can_be_randomly_selected = no
+			}
+			central_government = {
+				can_be_randomly_selected = no
+			}
+			subordinate = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_COMBINED_1"
+			"FACTION_NAME_COMBINED_2"
+			"FACTION_NAME_COMBINED_3"
+		}
+		
+		color = { 42 42 169 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = no # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = no # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = 0.2 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0.3 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.5 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.75 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.25 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.25 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.5 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = 1 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = 1 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.5 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = -0.5 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+			puppet_cost_factor = -0.5 # Changes the cost of puppeting a nation in a peace deal (-1 to 1)
+		}
+
+		can_be_boosted = no # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 1 #plus 50% trade opinion
+		}
+
+		ai_neutral = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	resistance_ideology = {
+		types = {
+			lambda = {
+				can_be_randomly_selected = no
+			}
+			generic_resistance = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_RESISTANCE_1"
+			"FACTION_NAME_RESISTANCE_2"
+			"FACTION_NAME_RESISTANCE_3"
+		}
+		
+		color = { 255 128 42 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = no # Declare war on same ideology. Not required
+			can_force_government = no # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = no # Can puppet a nation at peace deal. Required
+			can_lower_tension = yes # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = -0.5 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = -0.25 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.1 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.25 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.1 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.1 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.5 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = 0 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = -0.4 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.5 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = 0.5 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.5 #plus 50% trade opinion
+		}
+
+		ai_democratic = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	socialism = {
+		types = {
+			democratic_socialism = {
+				can_be_randomly_selected = yes
+			}
+			social_democracy = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_SOCIALISM_1"
+			"FACTION_NAME_SOCIALISM_2"
+			"FACTION_NAME_SOCIALISM_3"
+		}
+		
+		color = { 255 64 64 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = yes # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = no # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = yes # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = -0.1 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.25 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.4 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.1 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.25 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.15 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = 0.25 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = 0.25 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.3 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = 0.2 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.35 #plus 50% trade opinion
+		}
+
+		ai_democratic = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	authoritarian_communism = {
+		types = {
+			stalinism = {
+				can_be_randomly_selected = yes
+			}
+			leninism = {
+				can_be_randomly_selected = yes
+			}
+			maoism = {
+				can_be_randomly_selected = yes
+			}
+			marxism = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_AUTHORITARIAN_COMMUNISM_1"
+			"FACTION_NAME_AUTHORITARIAN_COMMUNISM_2"
+			"FACTION_NAME_AUTHORITARIAN_COMMUNISM_3"
+		}
+		
+		color = { 255 0 0 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = yes # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = no # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = 0.15 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0.1 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.1 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.15 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = -0.25 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = -0.25 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.3 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = 0.4 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.35 #plus 50% trade opinion
+		}
+
+		ai_communist = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	libertarian_communism = {
+		types = {
+			anarchism = {
+				can_be_randomly_selected = yes
+			}
+			syndicalism = {
+				can_be_randomly_selected = yes
+			}
+			mutualism = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_LIBERTARIAN_COMMUNISM_1"
+			"FACTION_NAME_LIBERTARIAN_COMMUNISM_2"
+			"FACTION_NAME_LIBERTARIAN_COMMUNISM_3"
+		}
+		
+		color = { 196 0 0 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = no # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = no # Can puppet a nation at peace deal. Required
+			can_lower_tension = yes # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = yes # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = no #Can host a government in exile
+		
+		war_impact_on_world_tension = -0.8 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = -0.8 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.75 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.75 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.75 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.75 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.25 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = 1 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = 1 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = 0 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = -1 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 1 #plus 50% trade opinion
+		}
+
+		ai_neutral = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	liberalism = {
+		types = {
+			classical_liberalism = {
+				can_be_randomly_selected = yes
+			}
+			populist_liberalism = {
+				can_be_randomly_selected = yes
+			}
+			social_liberalism = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_LIBERALISM_1"
+			"FACTION_NAME_LIBERALISM_2"
+			"FACTION_NAME_LIBERALISM_3"
+		}
+		
+		color = { 255 255 0 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = yes # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = yes # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = yes # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = yes # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = 0.1 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0.1 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.2 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.1 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.1 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.1 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.15 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = -0.25 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = 0.15 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.15 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = -0.1 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.25 #plus 50% trade opinion
+		}
+
+		ai_democratic = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	conservatism = {
+		types = {
+			national_conservatism = {
+				can_be_randomly_selected = yes
+			}
+			populist_conservatism = {
+				can_be_randomly_selected = yes
+			}
+			social_conservatism = {
+				can_be_randomly_selected = yes
+			}
+			reactionary = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_CONSERVATISM_1"
+			"FACTION_NAME_CONSERVATISM_2"
+			"FACTION_NAME_CONSERVATISM_3"
+		}
+		
+		color = { 64 64 196 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = yes # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = yes # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = 0.15 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0.1 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.15 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.1 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.1 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.1 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.15 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = -0.25 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = -0.25 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.3 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = 0.4 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.15 #plus 50% trade opinion
+		}
+
+		ai_fascist = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	oligarchism = {
+		types = {
+			oligarchic_democracy = {
+				can_be_randomly_selected = yes
+			}
+			authoritarian_oligarchy = {
+				can_be_randomly_selected = yes
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_OLIGARCHISM_1"
+			"FACTION_NAME_OLIGARCHISM_2"
+			"FACTION_NAME_OLIGARCHISM_3"
+		}
+		
+		color = { 128 128 128 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = yes # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = yes # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = yes
+			can_generate_female_country_leaders = yes
+			can_generate_female_unit_leaders = yes
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = 0.25 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0.2 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0.35 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0.2 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0.2 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0.2 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.35 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = -0.05 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = -0.05 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.15 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = 0.2 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.15 #plus 50% trade opinion
+		}
+
+		ai_neutral = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+
+	fascism = {
+		types = {
+			fascism_ideology = {
+				can_be_randomly_selected = yes
+			}
+			neo_nazism = {
+				can_be_randomly_selected = no
+			}
+			white_supremacism = {
+				can_be_randomly_selected = no
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_FASCISM_1"
+			"FACTION_NAME_FASCISM_2"
+			"FACTION_NAME_FASCISM_3"
+		}
+		
+		color = { 128 96 32 } # RGB ideology colour, used in the political pie chart or next to the chart. Can be overwritten in a subideology.
+		
+		rules = { # Rules for the ideology.  (yes/no)
+        	can_create_collaboration_government = yes # Can create a collaboration government
+			can_declare_war_on_same_ideology = yes # Declare war on same ideology. Not required
+			can_force_government = yes # Can change ideology in peace deal. Required
+			can_send_volunteers = yes # Can send volunteers. Required
+			can_puppet = yes # Can puppet a nation at peace deal. Required
+			can_lower_tension = yes # Lowers tension at peace deal. Not required
+			can_only_justify_war_on_threat_country = no # Can only justify on a nation that has generated world tension/threat. Not required
+			can_guarantee_other_ideologies = no # Can guarantee nations with different ideologies. Not required
+			can_generate_female_aces = no
+			can_generate_female_country_leaders = no
+			can_generate_female_unit_leaders = no
+		}
+
+        can_host_government_in_exile = yes #Can host a government in exile
+		
+		war_impact_on_world_tension = 0.5 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
+		faction_impact_on_world_tension = 0.4 # Goes from -1 to 1. Increases or decreases a faction of this ideologies impact on tension
+		
+		modifiers = { # More rules for the ideology. Every country [[Modifiers|modifier]] can apply.
+			generate_wargoal_tension = 0 # Required world tension to start justifying a war (0 to 1)
+			join_faction_tension = 0 # Required world tension to join a faction (0 to 1)
+			lend_lease_tension = 0 # Required tension to start a lend-lease (0 to 1)
+			send_volunteers_tension = 0 # Required tension to send volunteers (0 to 1)
+			guarantee_tension = 0.1 # Required tension to guarantee a nation (0 to 1)
+			take_states_cost_factor = -0.5 # Changes the cost of states in a peace deal. 0.25 would increase state cost by 25% (-1 to 1)
+			annex_cost_factor = -0.5 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
+			justify_war_goal_when_in_major_war_time = -0.4 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
+			drift_defence_factor = 0.6 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+		}
+
+		can_be_boosted = yes # Can you boost this ideologies popularity in another country (yes/no)
+		can_collaborate = yes # Can create collaboration governments
+		
+		faction_modifiers = {    # Applies to the entire faction if the faction leader has this ideology. Every country [[Modifiers|modifier]] can apply.
+			faction_trade_opinion_factor = 0.35 #plus 50% trade opinion
+		}
+
+		ai_fascist = yes # Determines what ai this ideology will use (democratic, communism, fascism, neutral)
+	}
+}
