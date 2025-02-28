@@ -17,12 +17,8 @@ set_politics = {
 }
 
 set_technology = {
-    infantry_equipment = 1
-    infantry_equipment1 = 1
-}
-
-add_ideas = {
-    suppression_fields
+    infantry_weapons = 1
+    infantry_weapons1 = 1
 }
 
 set_variable = { rebel_agitation = 0.187 }

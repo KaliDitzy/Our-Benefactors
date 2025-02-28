@@ -1,14 +1,18 @@
 spriteTypes = {
+    spriteType = {
+        name = GFX_infantry_weapons_medium
+        texturefile = "gfx/interface/technologies/early_90s_equipment.dds"
+    }
 	spriteType = {
-        name = GFX_infantry_equipment_medium
+        name = GFX_infantry_weapons1_medium
         texturefile = "gfx/interface/technologies/early_2000s_equipment.dds"
     }
 	spriteType = {
-        name = GFX_infantry_equipment1_medium
+        name = GFX_infantry_weapons2_medium
         texturefile = "gfx/interface/technologies/prototype_combine_equipment.dds"
     }
     spriteType = {
-        name = GFX_infantry_equipment2_medium
+        name = GFX_improved_infantry_weapons_medium
         texturefile = "gfx/interface/technologies/combine_equipment.dds"
     }
 }
