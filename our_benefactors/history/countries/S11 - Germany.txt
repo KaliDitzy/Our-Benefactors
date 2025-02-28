@@ -18,6 +18,7 @@ set_politics = {
 set_technology = {
     infantry_weapons = 1
     infantry_weapons1 = 1
+    infantry_weapons2 = 1
 }
 
 set_variable = { rebel_agitation = 0.032 }

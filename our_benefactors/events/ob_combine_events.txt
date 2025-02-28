@@ -6,11 +6,9 @@ country_event = {
     desc = citadel.1.d
     
     trigger = {
-		NOT = {
-			808 = {
-				check_variable = { citadel_progress < 1 }
-				has_state_flag = building_citadel
-			}
+		808 = {
+			NOT = { check_variable = { citadel_progress < 1 } }
+			has_state_flag = building_citadel
 		}
 	}
     
