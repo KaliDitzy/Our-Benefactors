@@ -1,11 +1,10 @@
 focus_tree = {
     id = S17_focus_tree_combine
     country = {
-        base = 0
+        factor = 0
         modifier = {
             add = 10
             original_tag = S17
-			has_government = combine
         }
     }
 	reset_on_civilwar = no
@@ -13,8 +12,7 @@ focus_tree = {
     initial_show_position = { focus = S17_begin_politics }
 	focus = {
         id = S17_combine_projects
-		relative_position_id = S17_begin_politics
-		x = -4
+		x = 6
 		y = 0
 		cost = 10
 		available = {

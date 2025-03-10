@@ -28,10 +28,6 @@ ideologies = {
 			can_join_factions = no
 		}
 
-		modifiers = {
-			enemy_justify_war_goal_time = 100
-		}
-
         can_host_government_in_exile = yes #Can host a government in exile
 		
 		war_impact_on_world_tension = 0.25 # Goes from -1 to 1. Increases or decreases the world tension created by this nation
@@ -47,6 +43,7 @@ ideologies = {
 			annex_cost_factor = 100 # Changes the cost of entirely annexing a nation in a peace deal. 0.5 would increase annexing cost by 50% (-1 to 1)
 			justify_war_goal_when_in_major_war_time = 0 # Changes the cost of justifying a war while in a major war. 0.5 would decrease time by 50% (0 to 1)
 			drift_defence_factor = 1 # Natural drift defence for the ideology # 0.3 would grant 30% drift defence (-1 to 1)
+			enemy_justify_war_goal_time = 100
 		}
 
 		can_be_boosted = no # Can you boost this ideologies popularity in another country (yes/no)
