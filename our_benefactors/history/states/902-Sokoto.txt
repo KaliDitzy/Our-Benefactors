@@ -6,9 +6,9 @@ state = {
 
 	history = {
 
-		owner = ENG
-		add_core_of = NGA
-		add_core_of = SOK
+		owner = XXX
+		
+		
 
 		buildings = {
 			infrastructure = 1

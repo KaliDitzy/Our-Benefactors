@@ -15,6 +15,7 @@ state = {
 	history = {
 
 		owner = S13
+		add_core_of = S13
 		
 		buildings = {
 			infrastructure = 3
@@ -34,8 +35,6 @@ state = {
 		victory_points = {
 			541 2 # Nitra
 		}
-
-		add_core_of = S13
 	}
 
 	provinces = {

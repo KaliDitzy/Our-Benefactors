@@ -5,6 +5,7 @@ state={
 
 	history={
 		owner = S17
+		add_core_of = S17
 		victory_points = {
 			310 3 #Daugavpils
 		}
@@ -16,7 +17,7 @@ state={
 			industrial_complex = 1
 			arms_factory = 1
 		}
-		add_core_of = S17
+		
 
 	}
 

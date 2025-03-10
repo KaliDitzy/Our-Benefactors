@@ -19,7 +19,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 11251;3325;sea;2408;2956;1628;2960;1629;;Fyn-SdrJylland
 9388;13257;sea;2358;3010;1608;3012;1609;;Stralsund-Rügen
 83;185;sea;1885;-1;-1;-1;-1;;Estonia-Ösel
-185;6201;sea;1885;-1;-1;-1;-1;;Ösel-Dagö
+13376;185;sea;1885;-1;-1;-1;-1;;MODDED
 83;6201;sea;1660;-1;-1;-1;-1;;Dagö-Estonia
 6891;3838;sea;5579;-1;-1;-1;-1;;Sardinia-Corsica
 9990;4159;sea;5681;-1;-1;-1;-1;;Calabria-Sicily
@@ -217,6 +217,22 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 13312;7982;sea;2919;-1;-1;-1;-1;;South Iran
 761;13315;sea;9092;-1;-1;-1;-1;;Ontario
 13196;13314;sea;9092;-1;-1;-1;-1;;Northern Quebec
+8053;10476;impassable;-1;-1;-1;-1;-1;;Paropamisus Mountains
+12788;10476;impassable;-1;-1;-1;-1;-1;;Paropamisus Mountains
+12788;10896;impassable;-1;-1;-1;-1;-1;;Paropamisus Mountains
+1995;10896;impassable;-1;-1;-1;-1;-1;;Paropamisus Mountains
+10852;7584;impassable;-1;-1;-1;-1;-1;;North Afghanistan
+10852;12248;impassable;-1;-1;-1;-1;-1;;North Afghanistan
+12877;7584;impassable;-1;-1;-1;-1;-1;;North Afghanistan
+10781;12248;impassable;-1;-1;-1;-1;-1;;North Afghanistan
+10781;12314;impassable;-1;-1;-1;-1;-1;;North Afghanistan
+10789;7916;impassable;-1;-1;-1;-1;-1;;South Afghanistan
+10789;1995;impassable;-1;-1;-1;-1;-1;;South Afghanistan
+10789;2078;impassable;-1;-1;-1;-1;-1;;South Afghanistan
+5064;2078;impassable;-1;-1;-1;-1;-1;;South Afghanistan
 1421;10184;sea;2899;-1;-1;-1;-1;;Sulu-Mindanao
 5864;5838;;-1;-1;-1;-1;-1;OTRANTO_STRAIT;Otranto Strait
 -1;-1;;-1;-1;-1;-1;-1;-1 
+#Start province ID;End province ID;Adjacency type;Through province ID;Starting X position;Starting Y position;Ending X position;Ending Y position;Adjacency rule;Comment
+
+

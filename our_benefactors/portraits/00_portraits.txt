@@ -28,6 +28,11 @@ default = {
 	}
 	
 	political = {
+		unorganized = {
+			male = {
+				"GFX_portrait_unorganized"
+			}
+		}
 		combine = {
 			male = {
 				"GFX_portrait_combine_m_1"

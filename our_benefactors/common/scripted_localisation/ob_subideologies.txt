@@ -1,0 +1,72 @@
+defined_text = {
+    name = get_subideology
+	text = {
+		trigger = {
+			has_government = unorganized
+		}
+        localization_key = "[unorganized_subideology]"
+    }
+    text = {
+		trigger = {
+			has_government = combine
+		}
+        localization_key = "[combine_subideology]"
+    }
+	text = {
+		trigger = {
+			has_government = resistance_ideology
+		}
+        localization_key = "[resistance_subideology]"
+    }
+}
+defined_text = {
+    name = unorganized_subideology
+	text = {
+		trigger = {
+			has_country_leader_ideology = unorganized_ideology
+		}
+        localization_key = unorganized_ideology
+    }
+	text = {
+		trigger = {
+			has_country_leader_ideology = xen_fauna
+		}
+        localization_key = xen_fauna
+    }
+}
+defined_text = {
+    name = combine_subideology
+	text = {
+		trigger = {
+			has_country_leader_ideology = progenitorate
+		}
+        localization_key = progenitorate
+    }
+	text = {
+		trigger = {
+			has_country_leader_ideology = central_government
+		}
+        localization_key = central_government
+    }
+    text = {
+		trigger = {
+			has_country_leader_ideology = subordinate
+		}
+        localization_key = subordinate
+    }
+}
+defined_text = {
+    name = resistance_subideology
+	text = {
+		trigger = {
+			has_country_leader_ideology = generic_resistance
+		}
+        localization_key = generic_resistance
+    }
+	text = {
+		trigger = {
+			has_country_leader_ideology = lambda
+		}
+        localization_key = lambda
+    }
+}

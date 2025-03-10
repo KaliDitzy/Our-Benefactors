@@ -1,4 +1,14 @@
 ﻿l_english:
+  unorganized: "Unorganized"
+  unorganized_noun: "Unorganized"
+  unorganized_desc: "Unorganized Land"
+  unorganized_booster: "Destabilizer"
+  unorganized_drift: "Daily Disorganization"
+  unorganized_ideology: "Unorganized"
+  unorganized_ideology_desc: "This land is dominated by intelligent life but has no common government, ideology, or way of life."
+  xen_fauna: "Xen Fauna"
+  xen_fauna_desc: "This land is dominated by wild Xen fauna, and is unfit for organized civilization."
+
   combine: "Combine"
   combine_noun: "the Combine"
   combine_desc: "Combine Regime"

@@ -12,9 +12,9 @@ state = {
 
 	history = {
 
-		owner = FIN
-		add_core_of = FIN
-		add_core_of = SMI
+		owner = XXX
+		
+		
 
 		victory_points = { 
 			11164 2 # Kemi

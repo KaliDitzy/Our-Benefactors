@@ -21,12 +21,12 @@ state = {
 		victory_points = {
 			13240 2 
 		}
-		owner = AFA
-		add_core_of = ETH
-		add_core_of = AFA
+		owner = XXX
+		
+		
 		1936.6.1 = {
-			owner = ITA
-			controller = ITA
+			owner = XXX
+			
 
 		}
 

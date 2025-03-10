@@ -14,8 +14,8 @@ state = {
 
 	history = {
 
-		owner = INS
-		add_core_of = INS
+		owner = XXX
+		
 
 		victory_points = {
 			4652 1 

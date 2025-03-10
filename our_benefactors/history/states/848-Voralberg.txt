@@ -6,11 +6,11 @@ state={
 	state_category = pastoral
 	history={
 		owner = S11
+		add_core_of = S11
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
 		}
-		add_core_of = S11
 	}
 	provinces={
 		6678 6680 

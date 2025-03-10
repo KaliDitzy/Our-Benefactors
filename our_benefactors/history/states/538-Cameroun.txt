@@ -10,8 +10,8 @@ state = {
 
 	history = {
 
-		owner = BEL
-		add_core_of = COG
+		owner = XXX
+		
 
 		IF = {
 			limit = {

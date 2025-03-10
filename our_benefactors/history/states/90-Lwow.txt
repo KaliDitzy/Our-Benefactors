@@ -20,10 +20,11 @@ state={
 		#	562 3
 		#}
 		owner = S15
+		add_core_of = S15
 		buildings = {
 			infrastructure = 3
 		}
-		add_core_of = S15
+		
 	}
 
 	provinces={

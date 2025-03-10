@@ -1,5 +1,9 @@
 spriteTypes = {
     spriteType = {
+        name = GFX_portrait_unorganized
+        texturefile = "gfx/leaders/generic/unorganized.dds"
+    }
+    spriteType = {
         name = GFX_portrait_combine_m_1
         texturefile = "gfx/leaders/generic/combine_m_1.dds"
     }

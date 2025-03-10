@@ -5,6 +5,7 @@ state={
 
 	history={
 		owner = S17
+		add_core_of = S17
 		victory_points = {
 			3152 5 
 		}
@@ -17,10 +18,8 @@ state={
 				coastal_bunker = 1
 
 			}
-
 		}
-		add_core_of = S17
-
+		
 	}
 
 	provinces={

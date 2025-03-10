@@ -12,6 +12,7 @@ state={
 
 	history={
 		owner = S13
+		add_core_of = S13
 		buildings = {
 			infrastructure = 3
 			arms_factory = 4
@@ -21,7 +22,7 @@ state={
 		victory_points = {
 			9660 20 
 		}
-		add_core_of = S13
+		
 	}
 
 	provinces={

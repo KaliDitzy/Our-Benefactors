@@ -35,6 +35,13 @@ state = {
 			industrial_complex = 4 #WAS 2
 			air_base = 3
 		}
+
+		1939.1.1 = {
+			buildings = {
+				air_base = 6
+				radar_station = 1
+			}
+		}
 	}
 
 	provinces = {

@@ -14,7 +14,6 @@ state = {
 
 		owner = S11
 		add_core_of = S11
-
 		buildings = {
 			infrastructure = 3 
 			industrial_complex = 2

@@ -14,11 +14,13 @@ state={
 			9606 3
 		}
 		owner = S13
+		add_core_of = S13
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 2
 		}
-		add_core_of = S13
+		
+		
 	}
 
 	provinces={

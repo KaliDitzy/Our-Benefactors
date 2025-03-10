@@ -6,15 +6,15 @@ state = {
 	state_category = enclave
 	
 	history = {	
-		owner = FIN
+		owner = XXX
 
 		buildings = {
 			infrastructure = 1 
 		}
 
-		add_core_of = FIN
-		add_core_of = KAR
-		add_core_of = SMI
+		
+		
+		
 		
 		victory_points = { #Salla
 			197 1

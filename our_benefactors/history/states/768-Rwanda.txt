@@ -11,7 +11,7 @@ state = {
 
 	history = {
 
-		owner = BEL
+		owner = XXX
 
 		IF = {
 			limit = {
@@ -23,7 +23,7 @@ state = {
 			}	
 		}
 
-		add_core_of = RWA
+		
 
 		victory_points = {
 			9962 1

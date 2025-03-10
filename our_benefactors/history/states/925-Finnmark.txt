@@ -16,9 +16,9 @@ state = {
 			9116 1
 		}
 		
-		owner = NOR
-		add_core_of = NOR
-		add_core_of = SMI
+		owner = XXX
+		
+		
 		
 		buildings = {
 			infrastructure = 1

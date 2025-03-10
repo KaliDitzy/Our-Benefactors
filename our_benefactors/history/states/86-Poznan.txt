@@ -31,6 +31,10 @@ state = {
 			}
 			air_base = 3
 		}
+		
+		1938.3.12 = {
+			
+		}
 	}
 
 	provinces = {

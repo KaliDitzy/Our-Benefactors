@@ -11,8 +11,8 @@ state = {
 
 	history = {
 
-		owner = FIN
-		add_core_of = FIN
+		owner = XXX
+		
 
 		victory_points = { 
 			158 2 # Oulu

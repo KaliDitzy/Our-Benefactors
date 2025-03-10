@@ -5,6 +5,7 @@ state={
 
 	history={
 		owner = S17
+		add_core_of = S17
 		victory_points = {
 			11312 1 #Marijampole
 		}
@@ -15,7 +16,7 @@ state={
 			air_base = 4
 
 		}
-		add_core_of = S17
+		
 
 	}
 

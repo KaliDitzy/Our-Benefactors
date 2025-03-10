@@ -6,7 +6,7 @@ state = {
 
 	history = {
 
-		owner = BEL
+		owner = XXX
 
 		IF = {
 			limit = {
@@ -26,7 +26,7 @@ state = {
 			infrastructure = 1
 		}
 
-		add_core_of = COG
+		
 
 	}
 

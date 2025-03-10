@@ -31,6 +31,15 @@ state = {
 			arms_factory = 2
 			air_base = 1
 		}
+		
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 3
+				# From "The Four Year Plan"
+				industrial_complex = 2
+			}
+		}
+
 	}
 
 	provinces = {

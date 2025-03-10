@@ -34,6 +34,13 @@ state = {
 			infrastructure = 4
 			industrial_complex = 3
 		}
+
+		1939.1.1 = {
+			buildings = {
+				radar_station = 1
+				synthetic_refinery = 3
+			}
+		}
 	}
 
 	provinces = {

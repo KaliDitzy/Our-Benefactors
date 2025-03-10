@@ -5,17 +5,18 @@ state={
 
 	history={
 		owner = S17
+		add_core_of = S17
 		buildings = {
 			infrastructure = 1
 		}
 		victory_points = {
 			185 1
 		}
-		add_core_of = S17
+		
 	}
 
 	provinces={
-		185 6201 
+		185 6201 13376
 	}
 	manpower=32370
 	buildings_max_level_factor=1.000

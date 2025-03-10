@@ -11,8 +11,8 @@ state = {
 
 	history = {
 
-		owner = FRA
-		add_core_of = RCG
+		owner = XXX
+		
 
 		victory_points = {
 			8193 3 #Brazzaville

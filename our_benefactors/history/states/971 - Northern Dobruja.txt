@@ -9,9 +9,9 @@ state = {
 
 	history = {
 
-		owner = ROM
-		add_core_of = ROM
-		add_claim_by = BUL
+		owner = XXX
+		
+		
 
 		victory_points = { 
 			657 3 

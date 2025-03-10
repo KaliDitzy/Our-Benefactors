@@ -4,9 +4,9 @@ state = {
 
 	history = {
 
-		owner = CHI
-		add_core_of = CHI
-		add_core_of = PRC
+		owner = XXX
+		
+		
 
 		buildings = {
 			infrastructure = 3
@@ -27,13 +27,13 @@ state = {
 				arms_factory = 2
 			}
 			JAP = {
-				set_province_controller = 1036
-				set_province_controller = 4619
-				set_province_controller = 4631
-				set_province_controller = 7167
-				set_province_controller = 7637
-				set_province_controller = 9959
-				set_province_controller = 10462
+				set_province_
+				set_province_
+				set_province_
+				set_province_
+				set_province_
+				set_province_
+				set_province_
 
 			}
 

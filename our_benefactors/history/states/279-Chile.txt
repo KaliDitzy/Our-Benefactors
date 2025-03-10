@@ -13,8 +13,8 @@ state = {
 
 	history = {
 
-		owner = CHL
-		add_core_of = CHL
+		owner = XXX
+		
 
 		buildings = {
 			infrastructure = 3 #was: 5
