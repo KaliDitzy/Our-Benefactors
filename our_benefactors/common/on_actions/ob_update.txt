@@ -1,0 +1,50 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				set_variable = { recently_at_war = 180 }
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = { recently_at_war > 0 }
+					}
+					subtract_from_variable = { recently_at_war = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_dynamic_modifier = { modifier = the_citadel } }
+				}
+				add_dynamic_modifier = { modifier = the_citadel }
+			}
+			if = {
+				limit = {
+					NOT = { has_dynamic_modifier = { modifier = suppression_fields } }
+				}
+				add_dynamic_modifier = { modifier = suppression_fields }
+			}
+
+			set_temp_variable_to_random = temp_random
+			if = {
+				limit = {
+					has_government = combine
+					check_variable = { temp_random > 0.6 }
+				}
+				add_to_variable = { rebel_agitation = 0.001 }
+				clamp_variable = {
+					var = rebel_agitation
+					min = 0
+					max = 1
+				}
+			}
+		}
+	}
+	on_government_change = {
+		effect = {
+		}
+	}
+}

@@ -1,0 +1,24 @@
+add_namespace = S17_focus
+
+country_event = {
+	id = S17_focus.1
+    title = S17_focus.1.t
+    desc = S17_focus.1.d
+
+	is_triggered_only = yes
+    
+    option = {
+        name = S17_focus.1a
+		swap_ideas = {
+			remove_idea = the_vault
+			add_idea = the_vault_prison
+		}
+    }
+	option = {
+        name = S17_focus.1b
+		swap_ideas = {
+			remove_idea = the_vault
+			add_idea = the_vault_research
+		}
+    }
+}

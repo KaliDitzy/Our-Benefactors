@@ -3,14 +3,14 @@ ideas = {
 		the_vault = {
 			modifier = {
 				combine_drift = 0.1
-				stability_weekly = 0.01
+				stability_weekly = 0.002
 				resistance_growth = -0.1
 			}
         }
 		the_vault_research = {
 			modifier = {
 				combine_drift = 0.05
-				stability_weekly = 0.01
+				stability_weekly = 0.001
 				resistance_growth = -0.05
 				research_speed_factor = 0.05
 			}
@@ -18,7 +18,7 @@ ideas = {
 		the_vault_prison = {
 			modifier = {
 				combine_drift = 0.15
-				stability_weekly = 0.01
+				stability_weekly = 0.004
 				resistance_growth = -0.15
 			}
         }

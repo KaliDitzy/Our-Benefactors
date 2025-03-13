@@ -1,4 +1,8 @@
 spriteTypes = {
+	spriteType = {
+        name = GFX_ideology_unorganized_group
+        texturefile = "gfx/interface/ideologies/unorganized_group.dds"
+    }
     spriteType = {
         name = GFX_ideology_combine_group
         texturefile = "gfx/interface/ideologies/combine_group.dds"

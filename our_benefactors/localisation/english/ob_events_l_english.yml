@@ -1,4 +1,5 @@
 ﻿l_english:
+  #resistance events
   resistance_decisions.1.t: "The [ROOT.GetNonIdeologyAdjectiveCap] Uprising"
   resistance_decisions.1.d: "Recent tensions in [ROOT.GetNameDef] have come to a head, where regular citizens can no longer bear the hostilities between the local administration of [ROOT.GetLeader] and them. The crossfire between attempts at subjugating resistance members have escalated to an almost irresponsible degree, displacing families and destroying long-standing loyalties to the Combine. This is where it ends, either for the Combine's grip on the region or humanity's hopes and aspirations."
   resistance_decisions.1a: "We shall see about that."
@@ -43,6 +44,13 @@
   major_resistance_events.3a: "Destroy it!"
   major_resistance_events.3b: "Let's keep it."
 
+  #combine events
   citadel.1.t: "The Citadel is Complete"
   citadel.1.d: "Our efforts have not gone to waste, and the citadel has been built to completion. Hopefully it will serve as a powerful beacon of our influence and the Combine's dominion over Earth."
   citadel.1a: "Indeed."
+
+  #S17 Focus Tree
+  S17_focus.1.t: "Vault Specialization"
+  S17_focus.1.d: "The vault so far has only been of vague purpose, as a temporary holding as other more permanent projects take its place. If we specialize it, we may be able to get more value out of its mobility and proximity."
+  S17_focus.1a: "Security is our highest priority."
+  S17_focus.1b: "The advancement of humanity is most important."

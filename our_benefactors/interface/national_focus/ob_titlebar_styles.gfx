@@ -1,5 +1,9 @@
 spriteTypes = {
     spriteType = {
+        name = GFX_focus_unavailable_historical
+        textureFile = gfx/interface/focusview/titlebar/focus_unavailable_historical_bg.dds
+    }
+    spriteType = {
         name = GFX_focus_can_start_historical
         textureFile = gfx/interface/focusview/titlebar/focus_can_start_historical_bg.dds
     }

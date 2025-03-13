@@ -1,3 +1,8 @@
+@supermajor = 12.86 # 90 days
+@major = 10 # 70 days
+@minor = 7.15 # 50 days
+@flavor = 4.29 # 30 days
+
 focus_tree = {
 	id = S17_focus_tree
 	
@@ -11,18 +16,19 @@ focus_tree = {
 
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 450 y = 950 }
+	continuous_focus_position = { x = 128 y = 64 }
     initial_show_position = { focus = S17_make_compromises }
 
 	## SUBVERT THE COMBINE (BREEN'S REPUBLIC)
 	focus = {
-        id = S17_subvert_the_combine
-		x = 6
+        id = S17_subversions
+		relative_position_id = S17_compromises
+		x = -4
 		y = 0
-		cost = 10
+		cost = @supermajor
 		mutually_exclusive = {
-			focus = S17_make_compromises
-			focus = S17_set_a_new_precedent
+			focus = S17_compromises
+			focus = S17_precedents
 		}
 
 		completion_reward = {
@@ -31,30 +37,61 @@ focus_tree = {
 
 	## MAKE COMPROMISES (HISTORICAL)
 	focus = {
-        id = S17_make_compromises
+        id = S17_compromises
 		text_icon = historical
-		x = 10
+		x = 14
 		y = 0
-		cost = 10
+		cost = @supermajor
 		mutually_exclusive = {
-			focus = S17_subvert_the_combine
-			focus = S17_set_a_new_precedent
+			focus = S17_subversions
+			focus = S17_precedents
 		}
 
 		completion_reward = {
+			add_popularity = {
+				ideology = combine
+				popularity = 0.1
+			}
+		}
+    }
+	focus = {
+        id = S17_the_vault
+		relative_position_id = S17_compromises
+		x = -1
+		y = 1
+		cost = @major
+		prerequisite = {
+			focus = S17_compromises
+		}
+
+		bypass = {
+			NOT = { has_government = combine }
+		}
+		available = {
+			set_temp_variable = { tooltip_value = 0.25 }
+			custom_trigger_tooltip = {
+				tooltip = CITADEL_PROGRESS
+				NOT = { check_variable = { 808.citadel_progress < tooltip_value } }
+			}
+		}
+		completion_reward = {
+			add_ideas = the_vault
 		}
     }
 	focus = {
         id = S17_the_citadel
 		text_icon = historical
-		relative_position_id = S17_make_compromises
-		x = -1
+		relative_position_id = S17_compromises
+		x = 1
 		y = 1
-		cost = 5
+		cost = @major
 		prerequisite = {
-			focus = S17_make_compromises
+			focus = S17_compromises
 		}
 
+		bypass = {
+			NOT = { has_government = combine }
+		}
 		completion_reward = {
 			custom_effect_tooltip = {
 				localization_key = CITADEL_CONSTRUCTION_BEGIN
@@ -67,37 +104,239 @@ focus_tree = {
 		}
     }
 	focus = {
-        id = S17_the_vault
-		text_icon = historical
-		relative_position_id = S17_make_compromises
-		x = 1
+        id = S17_vault_specialization
+		relative_position_id = S17_the_vault
+		x = 0
 		y = 1
-		cost = 5
+		cost = @minor
 		prerequisite = {
-			focus = S17_make_compromises
+			focus = S17_the_vault
 		}
 
+		bypass = {
+			NOT = { has_government = combine }
+		}
 		available = {
-			set_temp_variable = { tooltip_value = 0.25 }
-			custom_trigger_tooltip = {
-				tooltip = CITADEL_PROGRESS
-				NOT = { check_variable = { 808.citadel_progress < tooltip_value } }
+			has_idea = the_vault
+		}
+		completion_reward = {
+			# event that lets player decide whether or not to use the vault for security or research
+			country_event = S17_focus.1
+		}
+    }
+	focus = {
+        id = S17_transhuman_conversion
+		text_icon = historical
+		relative_position_id = S17_the_citadel
+		x = 0
+		y = 1
+		cost = @minor
+		prerequisite = {
+			focus = S17_the_citadel
+		}
+
+		bypass = {
+			NOT = { has_government = combine }
+		}
+		completion_reward = {
+			# more manpower
+		}
+    }
+	focus = {
+        id = S17_the_long_game
+		relative_position_id = S17_compromises
+		x = -1
+		y = 3
+		cost = @supermajor
+		prerequisite = {
+			focus = S17_vault_specialization
+			focus = S17_transhuman_conversion
+		}
+		
+		bypass = {
+			NOT = { has_government = combine }
+		}
+		completion_reward = {
+			# get ready to delay combine expansion
+		}
+    }
+	focus = {
+        id = S17_secure_favor
+		relative_position_id = S17_compromises
+		x = 1
+		y = 3
+		cost = @supermajor
+		prerequisite = {
+			focus = S17_vault_specialization
+			focus = S17_transhuman_conversion
+		}
+		
+		bypass = {
+			NOT = { has_government = combine }
+		}
+		completion_reward = {
+			custom_effect_tooltip = if_they_accept
+			effect_tooltip = {
+				add_stability = 0.15
+				add_war_support = 0.05
+			}
+			hidden_effect = {
+				set_temp_variable = { score = -10 }
+				if = {
+					limit = {
+						has_completed_focus = S17_the_vault
+					}
+					add_to_temp_variable = { score = 6 }
+				}
+				if = {
+					limit = {
+						has_completed_focus = S17_vault_specialization
+					}
+					add_to_temp_variable = { score = 6 }
+				}
+				
+				if = {
+					limit = {
+						NOT = { check_variable = { score < 1 } }
+					}
+					add_stability = 0.15
+					add_war_support = 0.05
+					set_country_flag = S17_secured_favor
+				}
+			}
+			#scorer that will determine whether or not the combine approve of expansion
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				set_temp_variable = { want = 0 }
+
+				set_temp_variable = { score = -10 }
+				if = {
+					limit = {
+						has_completed_focus = S17_the_vault
+					}
+					add_to_temp_variable = { score = 6 }
+				}
+				if = {
+					limit = {
+						has_completed_focus = S17_vault_specialization
+					}
+					add_to_temp_variable = { score = 6 }
+				}
+
+				if = {
+					limit = {
+						NOT = { check_variable = { score < 1 } }
+					}
+					set_temp_variable = { want = 1 }
+				}
+				add = want
+			}
+		}
+    }
+	focus = {
+        id = S17_delay_citadel_completion
+		relative_position_id = S17_compromises
+		x = -2
+		y = 4
+		cost = @major
+		prerequisite = {
+			focus = S17_the_long_game
+		}
+		
+		bypass = {
+			OR = {
+				808 = {
+					NOT = { has_state_flag = building_citadel }
+				}
+				NOT = { has_government = combine }
 			}
 		}
 		completion_reward = {
-			add_ideas = the_vault
+			set_temp_variable = { tooltip_value = 0.25 }
+			808 = {
+				custom_effect_tooltip = CITADEL_PROGRESS_EFFICIENCY_DECREASE_BY
+				subtract_from_variable = { citadel_progress_efficiency = tooltip_value }
+				clamp_variable = {
+					var = citadel_progress_efficiency
+					min = 0
+					max = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_country_flag = S17_secured_favor
+			}
+			modifier = {
+				add = 1
+				date > 2019.1.1
+			}
+		}
+    }
+	focus = {
+        id = S17_increase_autonomy
+		relative_position_id = S17_compromises
+		x = 0
+		y = 4
+		cost = @major
+		prerequisite = {
+			focus = S17_the_long_game
+		}
+		prerequisite = {
+			focus = S17_secure_favor
+		}
+		
+		bypass = {
+			NOT = { has_government = combine }
+		}
+		available = {
+			has_country_flag = S17_secured_favor
+		}
+		completion_reward = {
+			#scorer that will determine whether or not the combine approve of increased autonomy
+		}
+    }
+	focus = {
+        id = S17_agitate_resistance_cells
+		relative_position_id = S17_delay_citadel_completion
+		x = 0
+		y = 1
+		cost = @minor
+		prerequisite = {
+			focus = S17_delay_citadel_completion
+		}
+		
+		bypass = {
+			NOT = { has_government = combine }
+		}
+		completion_reward = {
+			set_temp_variable = { tooltip_value = 0.1 }
+			custom_effect_tooltip = REBEL_AGITATION_INCREASE
+			add_to_variable = { rebel_agitation = tooltip_value }
+			clamp_variable = {
+				var = rebel_agitation
+				min = 0
+				max = 1
+			}
 		}
     }
 
 	## SET A NEW PRECEDENT (EARLY RESISTANCE)
 	focus = {
-        id = S17_set_a_new_precedent
-		x = 14
+        id = S17_precedents
+		relative_position_id = S17_compromises
+		x = 4
 		y = 0
-		cost = 10
+		cost = @supermajor
 		mutually_exclusive = {
-			focus = S17_subvert_the_combine
-			focus = S17_make_compromises
+			focus = S17_subversions
+			focus = S17_compromises
 		}
 
 		completion_reward = {

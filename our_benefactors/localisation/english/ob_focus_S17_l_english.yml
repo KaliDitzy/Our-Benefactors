@@ -1,2 +1,10 @@
 ﻿l_english:
-  S17_focus_name: "Test!"
+  S17_subversions: "§tSubversions§!"
+  S17_compromises: "§2Compromises§!"
+  S17_precedents: "§OPrecedents§!"
+
+  S17_the_citadel: "The Citadel"
+  S17_transhuman_conversion: "Punitive Transhumanism"
+
+  S17_the_vault: "The Vault"
+  S17_vault_specialization: "Specialize the Vault"

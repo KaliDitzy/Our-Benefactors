@@ -482,7 +482,11 @@ country_event = {
 	trigger = {
 		original_tag = S17
 		has_government = combine
-		has_idea = the_vault
+		OR = {
+			has_idea = the_vault
+			has_idea = the_vault_prison
+			has_idea = the_vault_research
+		}
 
 		NOT = {
 			any_country = {
@@ -549,7 +553,11 @@ country_event = {
 	trigger = {
 		original_tag = S17
 		has_government = combine
-		has_idea = the_vault
+		OR = {
+			has_idea = the_vault
+			has_idea = the_vault_prison
+			has_idea = the_vault_research
+		}
 
 		NOT = {
 			any_country = {
