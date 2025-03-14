@@ -69,7 +69,7 @@
 
   liberalism: "Liberalism"
   liberalism_noun: "Liberalism"
-  liberalism_desc: "Liberal Government"
+  liberalism_desc: "Democratic Government"
   liberalism_booster: "Liberal Politician"
   liberalism_drift: "Daily Liberal Drift"
   classical_liberalism: "Classical Liberalism"
@@ -81,7 +81,7 @@
 
   conservatism: "Conservatism"
   conservatism_noun: "Conservatism"
-  conservatism_desc: "Conservative Government"
+  conservatism_desc: "Democratic Government"
   conservatism_booster: "Conservative Politician"
   conservatism_drift: "Daily Conservative Drift"
   national_conservatism: "National Conservatism"
@@ -114,3 +114,5 @@
   neo_nazism: "Neo-Nazism believes in the racial supremacy of the Aryan race, primarily northern European and German ethnic groups, explicitly exterminating groups they do not believe align with their ideal. They often employ Fascist power structures to get their way."
   white_supremacism: "White Supremacism"
   white_supremacism_desc: "White Supremacism believes in the racial supremacy of the white race, and that all other groups are only meant to serve the white race, or to be exterminated."
+  neo_combine: "Neo-Combine"
+  neo_combine_desc: "Neo-Combinism came as a result of the Combine occupation on Earth, reflecting those who still sympathize with Combine ideology and goals, though not necessarily wishing to cooperate with the Combine itself, instead seeking to achieve human supremacy via the assimilation of all other life, justified by techno-populist rhetoric."

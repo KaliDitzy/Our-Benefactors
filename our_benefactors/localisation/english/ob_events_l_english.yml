@@ -1,4 +1,9 @@
 ﻿l_english:
+  #generic events
+  generic.1.t: "Regime Change"
+  generic.1.d: "As you have changed regimes, there is a chance for take up a new focus tree. You may either keep your current focus tree or switch to the generic tree for your ideology if you have reached the end of your content."
+  generic.1a: "We will preserve our focus."
+  generic.1b: "Let us change focus."
   #resistance events
   resistance_decisions.1.t: "The [ROOT.GetNonIdeologyAdjectiveCap] Uprising"
   resistance_decisions.1.d: "Recent tensions in [ROOT.GetNameDef] have come to a head, where regular citizens can no longer bear the hostilities between the local administration of [ROOT.GetLeader] and them. The crossfire between attempts at subjugating resistance members have escalated to an almost irresponsible degree, displacing families and destroying long-standing loyalties to the Combine. This is where it ends, either for the Combine's grip on the region or humanity's hopes and aspirations."

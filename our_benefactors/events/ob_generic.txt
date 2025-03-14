@@ -1,0 +1,34 @@
+add_namespace = generic
+
+country_event = {
+	id = generic.1
+    title = generic.1.t
+    desc = generic.1.d
+    
+    is_triggered_only = yes
+    
+    option = {
+        name = generic.1a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					original_tag = S17
+				}
+			}
+		}
+    }
+	option = {
+        name = generic.1b
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = -100
+				OR = {
+					original_tag = S17
+				}
+			}
+		}
+    }
+}

@@ -45,6 +45,7 @@ on_actions = {
 	}
 	on_government_change = {
 		effect = {
+			country_event = generic.1
 		}
 	}
 }

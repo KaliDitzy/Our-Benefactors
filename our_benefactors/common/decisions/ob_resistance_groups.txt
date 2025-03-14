@@ -5,7 +5,7 @@ resistance_groups = {
 			check_variable = { rebel_agitation < 1 }
 		}
 		available = {
-			combine < 0.67
+			combine < 0.5
 		}
 		days_re_enable = 30
 		cost = 50
@@ -60,7 +60,7 @@ resistance_groups = {
 			check_variable = { rebel_agitation > 0 }
 		}
 		available = {
-			resistance_ideology < 0.67
+			resistance_ideology < 0.5
 		}
 		days_re_enable = 90
 		cost = 100
@@ -138,78 +138,6 @@ resistance_groups = {
 		}
 		priority = 1000
 	}
-	intervene_in_resistance = {
-		visible = {
-			any_other_country = {
-				has_government = combine
-				has_civil_war = yes
-				NOT = { has_war_with = ROOT }
-			}
-		}
-		available = {
-			any_other_country = {
-				has_government = resistance_ideology
-				has_civil_war = yes
-				is_neighbor_of = ROOT
-				NOT = { has_war_with = ROOT }
-			}
-		}
-		days_re_enable = 30
-		cost = 50
-		complete_effect = {
-			every_neighbor_country = {
-				limit = {
-					has_government = resistance_ideology
-					has_civil_war = yes
-					NOT = { has_war_with = ROOT }
-				}
-				PREV = {
-					declare_war_on = {
-						target = PREV
-						type = topple_government
-					}
-				}
-			}
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 0
-				check_variable = { recently_at_war > 0 }
-			}
-		}
-	}
-	crush_resistance = {
-		visible = {
-			any_neighbor_country = {
-				has_government = resistance_ideology
-				NOT = { has_war_with = ROOT }
-				has_civil_war = no
-			}
-		}
-		days_re_enable = 30
-		cost = 100
-		complete_effect = {
-			every_neighbor_country = {
-				limit = {
-					has_government = resistance_ideology
-					NOT = { has_war_with = ROOT }
-					has_civil_war = no
-				}
-				PREV = {
-					declare_war_on = {
-						target = PREV
-						type = topple_government
-					}
-				}
-			}
-		}
-		ai_will_do = {
-			base = 0.5
-			modifier = {
-				factor = 0
-				check_variable = { recently_at_war > 0 }
-			}
-		}
-	}
+	# targeted decision against resistance civil war
+	# targeted decision against independent resistance group
 }

@@ -3,9 +3,6 @@
 
 # Political advisors
 every_possible_country = {
-	limit = {
-		has_government = combine
-	}
 	generate_character = {
 		token_base = generic_combine_benefactor # token will be TAG_token_base
 		advisor = {
@@ -13,11 +10,11 @@ every_possible_country = {
 			slot = political_advisor
 			traits = { combine_benefactor }
 			visible = {
-				NOT = { has_government = resistance_ideology }
+				has_government = combine
 			}
 			available = {
 				hidden_trigger = {
-					NOT = { has_government = resistance_ideology }
+					has_government = combine
 				}
 			}
 			ai_will_do = {
@@ -30,11 +27,6 @@ every_possible_country = {
 		}
 		portraits = { 
 			civilian = { small = GFX_portrait_generic_combine_advisor }
-		}
-	}
-	if = {
-		limit = {
-			NOT = { tag = S17 }
 		}
 	}
 	generate_character = {
