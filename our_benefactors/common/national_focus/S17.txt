@@ -181,19 +181,7 @@ focus_tree = {
 				add_war_support = 0.05
 			}
 			hidden_effect = {
-				set_temp_variable = { score = -10 }
-				if = {
-					limit = {
-						has_completed_focus = S17_the_vault
-					}
-					add_to_temp_variable = { score = 6 }
-				}
-				if = {
-					limit = {
-						has_completed_focus = S17_vault_specialization
-					}
-					add_to_temp_variable = { score = 6 }
-				}
+				set_temp_variable = { score = mtth:S17_secure_favor_acceptance }
 				
 				if = {
 					limit = {

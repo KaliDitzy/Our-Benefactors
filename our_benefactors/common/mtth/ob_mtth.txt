@@ -1,0 +1,11 @@
+S17_secure_favor_acceptance = {
+	base = -10
+	modifier = {
+		add = 6
+		has_completed_focus = S17_the_vault
+	}
+	modifier = {
+		add = 6
+		has_completed_focus = S17_vault_specialization
+	}
+}
