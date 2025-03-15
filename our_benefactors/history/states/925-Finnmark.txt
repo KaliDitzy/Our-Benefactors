@@ -16,9 +16,8 @@ state = {
 			9116 1
 		}
 		
-		owner = XXX
-		
-		
+		owner = S08
+		add_core_of = S08
 		
 		buildings = {
 			infrastructure = 1

@@ -9,8 +9,8 @@ state = {
 	
 	
 	history = {
-		owner = XXX
-		
+		owner = S08
+		add_core_of = S08
 		
 		victory_points = { #Vaasa
 			3122 2

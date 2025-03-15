@@ -11,3 +11,6 @@ set_politics = {
     ruling_party = unorganized
     elections_allowed = no
 }
+
+recruit_character = XXX_wastes
+promote_character = XXX_wastes

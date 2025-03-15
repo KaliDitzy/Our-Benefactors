@@ -1,0 +1,14 @@
+characters = {
+	XXX_wastes = {
+		name = XXX_wastes
+        portraits = {
+            civilian = {
+                large = "GFX_portrait_unorganized"
+            }
+        }
+        country_leader = {
+            ideology = unorganized_ideology
+            desc = XXX_wastes_desc
+        }
+	}
+}
