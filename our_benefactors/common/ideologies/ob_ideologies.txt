@@ -552,6 +552,9 @@ ideologies = {
 			white_supremacism = {
 				can_be_randomly_selected = no
 			}
+			neo_combine = {
+				can_be_randomly_selected = yes
+			}
 		}
 		
 		dynamic_faction_names = {
