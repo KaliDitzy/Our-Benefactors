@@ -44,7 +44,7 @@ on_actions = {
 			else_if = {
 				limit = {
 					has_government = combine
-					check_variable = { temp_random < 0.25 }
+					check_variable = { temp_random < 0.5 }
 				}
 				add_to_variable = { rebel_agitation = -0.001 }
 				clamp_variable = {

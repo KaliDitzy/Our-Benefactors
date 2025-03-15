@@ -17,7 +17,7 @@ focus_tree = {
 	reset_on_civilwar = no
 
 	continuous_focus_position = { x = 128 y = 64 }
-    initial_show_position = { focus = S17_make_compromises }
+    initial_show_position = { focus = S17_compromises }
 
 	## SUBVERT THE COMBINE (BREEN'S REPUBLIC)
 	focus = {
@@ -192,7 +192,6 @@ focus_tree = {
 					set_country_flag = S17_secured_favor
 				}
 			}
-			#scorer that will determine whether or not the combine approve of expansion
 		}
 		
 		ai_will_do = {
@@ -200,19 +199,7 @@ focus_tree = {
 			modifier = {
 				set_temp_variable = { want = 0 }
 
-				set_temp_variable = { score = -10 }
-				if = {
-					limit = {
-						has_completed_focus = S17_the_vault
-					}
-					add_to_temp_variable = { score = 6 }
-				}
-				if = {
-					limit = {
-						has_completed_focus = S17_vault_specialization
-					}
-					add_to_temp_variable = { score = 6 }
-				}
+				set_temp_variable = { score = mtth:S17_secure_favor_acceptance }
 
 				if = {
 					limit = {
@@ -287,7 +274,37 @@ focus_tree = {
 			has_country_flag = S17_secured_favor
 		}
 		completion_reward = {
-			#scorer that will determine whether or not the combine approve of increased autonomy
+			custom_effect_tooltip = if_they_accept
+			effect_tooltip = {
+				add_ideas = increased_autonomy
+			}
+			hidden_effect = {
+				set_temp_variable = { score = mtth:S17_increase_autonomy_acceptance }
+				
+				if = {
+					limit = {
+						NOT = { check_variable = { score < 1 } }
+					}
+					add_ideas = increased_autonomy
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				set_temp_variable = { want = 0 }
+
+				set_temp_variable = { score = mtth:S17_increase_autonomy_acceptance }
+
+				if = {
+					limit = {
+						NOT = { check_variable = { score < 1 } }
+					}
+					set_temp_variable = { want = 1 }
+				}
+				add = want
+			}
 		}
     }
 	focus = {

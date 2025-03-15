@@ -13,9 +13,9 @@ bookmarks = {
 				FAKE_suppression_fields
 			}
 			focuses = {
-				S17_subvert_the_combine
-				S17_make_compromises
-				S17_set_a_new_precedent
+				S17_subversions
+				S17_compromises
+				S17_precedents
 			}
 		}
 
