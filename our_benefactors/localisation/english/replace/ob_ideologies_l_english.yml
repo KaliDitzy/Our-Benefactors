@@ -40,6 +40,8 @@
   democratic_socialism_desc: "Democratic Socialism seeks to transfer control of the means of production and market regulation to the workers via democratic means."
   social_democracy: "Social Democracy"
   social_democracy_desc: "Social Democracy seeks to better civilian welfare via the use of social safety nets, public healthcare, and general government intervention."
+  utopian_socialism: "Utopian Socialism"
+  utopian_socialism_desc: "Utopian socialism is a belief in the creation of an ideal society through peaceful, gradual reforms, based on class collaboration and shared wealth, rather than class struggle." #AI GENERATED PLACEHOLDER, TO BE REPLACED BEFORE RELEASE
 
   authoritarian_communism: "Authoritarian Communism"
   authoritarian_communism_noun: "Authoritarian Communism"

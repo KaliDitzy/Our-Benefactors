@@ -10,10 +10,8 @@ state={
 	}
 
 	history={
-		owner = XXX
-		add_dynamic_modifier = {
-			modifier = FRA_maginot_line_dynamic_modifier
-		}
+		owner = S07
+		add_core_of = S07
 		#victory_points = { 6529 1 }
 		#victory_points = { 549 1 }
 		victory_points = { 678 5 }

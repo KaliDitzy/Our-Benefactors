@@ -10,8 +10,8 @@ state = {
 
 	history = {
 
-		owner = XXX
-		
+		owner = S07
+		add_core_of = S07
 
 		victory_points = {
 			3516 5 # Namur

@@ -183,6 +183,9 @@ ideologies = {
 			social_democracy = {
 				can_be_randomly_selected = yes
 			}
+			utopian_socialism = {
+				can_be_randomly_selected = yes
+			}
 		}
 		
 		dynamic_faction_names = {

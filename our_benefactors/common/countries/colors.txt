@@ -1,3 +1,11 @@
+S05 = {
+	color = rgb { 186 129 30 }
+	color_ui = rgb { 188 131 32 }
+}
+S07 = {
+	color = rgb { 30 38 112 }
+	color_ui = rgb { 2 10 84 }
+}
 S11 = {
 	color = rgb { 52 52 66 }
 	color_ui = rgb { 27 27 41 }
