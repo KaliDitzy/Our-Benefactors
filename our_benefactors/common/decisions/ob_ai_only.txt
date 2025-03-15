@@ -66,6 +66,9 @@ ai_only = {
 				PREV = {
 					any_owned_state = {
 						is_core_of = PREV.PREV
+						NOT = {
+							is_in_array = { core_return_exception = PREV.PREV }
+						}
 					}
 				}
 			}
@@ -80,6 +83,9 @@ ai_only = {
 					every_owned_state = {
 						limit = {
 							is_core_of = PREV.PREV
+							NOT = {
+								is_in_array = { core_return_exception = PREV.PREV }
+							}
 						}
 						transfer_state_to = PREV.PREV
 					}

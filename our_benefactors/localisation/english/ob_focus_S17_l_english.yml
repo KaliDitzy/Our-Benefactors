@@ -10,5 +10,9 @@
   S17_vault_specialization: "Specialize the Vault"
 
   S17_delay_citadel_completion: "Delay the Citadel"
+  S17_directive_to_expand: "Directive A.C.C." # Assimilate-Clamp-Coagulate
 
   S17_agitate_resistance_cells: "Agitate the Lambda Resistance"
+  S17_expand_into_poland: "Plan Sarkans"
+  S17_expand_into_belarus: "Plan Balts"
+  S17_expand_into_novgorod: "Plan Zaļš"

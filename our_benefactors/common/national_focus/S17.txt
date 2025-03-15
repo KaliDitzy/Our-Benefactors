@@ -308,6 +308,24 @@ focus_tree = {
 		}
     }
 	focus = {
+        id = S17_directive_to_expand
+		relative_position_id = S17_compromises
+		x = 4
+		y = 6
+		cost = @major
+		prerequisite = {
+			focus = S17_secure_favor
+		}
+		
+		available = {
+			has_country_flag = S17_secured_favor
+			has_government = combine
+		}
+		completion_reward = {
+			add_command_power = 25
+		}
+    }
+	focus = {
         id = S17_agitate_resistance_cells
 		relative_position_id = S17_delay_citadel_completion
 		x = 0
@@ -331,12 +349,209 @@ focus_tree = {
 			}
 		}
     }
+	focus = {
+        id = S17_expand_into_poland
+		relative_position_id = S17_directive_to_expand
+		x = -2
+		y = 1
+		cost = @minor
+		prerequisite = {
+			focus = S17_directive_to_expand
+		}
+		
+		available = {
+			has_government = combine
+			any_country = {
+				original_tag = S15
+				has_government = combine
+				OR = {
+					owns_state = 5
+					owns_state = 97
+					owns_state = 98
+					owns_state = 807
+					owns_state = 85
+				}
+			}
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					original_tag = S15
+					has_government = combine
+				}
+				country_event = S17_focus.2
+				if = {
+					limit = {
+						owns_state = 5
+					}
+					5 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S15 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 97
+					}
+					97 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S15 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 98
+					}
+					98 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S15 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 807
+					}
+					807 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S15 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 85
+					}
+					85 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S15 }
+					}
+				}
+			}
+		}
+    }
+	focus = {
+        id = S17_expand_into_belarus
+		relative_position_id = S17_directive_to_expand
+		x = 0
+		y = 1
+		cost = @minor
+		prerequisite = {
+			focus = S17_directive_to_expand
+		}
+		
+		available = {
+			has_government = combine
+			any_country = {
+				original_tag = S16
+				has_government = combine
+				OR = {
+					owns_state = 784
+					owns_state = 96
+					owns_state = 95
+				}
+			}
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					original_tag = S16
+					has_government = combine
+				}
+				country_event = S17_focus.2
+				if = {
+					limit = {
+						owns_state = 784
+					}
+					784 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S16 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 96
+					}
+					96 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S16 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 95
+					}
+					95 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S16 }
+					}
+				}
+			}
+		}
+    }
+	focus = {
+        id = S17_expand_into_novgorod
+		relative_position_id = S17_directive_to_expand
+		x = 2
+		y = 1
+		cost = @minor
+		prerequisite = {
+			focus = S17_directive_to_expand
+		}
+		
+		available = {
+			has_government = combine
+			any_country = {
+				original_tag = S12
+				has_government = combine
+				OR = {
+					owns_state = 195
+					owns_state = 208
+					owns_state = 209
+				}
+			}
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					original_tag = S12
+					has_government = combine
+				}
+				country_event = S17_focus.2
+				if = {
+					limit = {
+						owns_state = 195
+					}
+					195 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S12 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 208
+					}
+					208 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S12 }
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 209
+					}
+					209 = {
+						transfer_state_to = S17
+						add_to_array = { core_return_exception = S12 }
+					}
+				}
+			}
+		}
+    }
 
 	## SET A NEW PRECEDENT (EARLY RESISTANCE)
 	focus = {
         id = S17_precedents
 		relative_position_id = S17_compromises
-		x = 4
+		x = 8
 		y = 0
 		cost = @supermajor
 		mutually_exclusive = {

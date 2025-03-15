@@ -1,6 +1,6 @@
 add_namespace = S17_focus
 
-country_event = {
+country_event = { # vault specialization
 	id = S17_focus.1
     title = S17_focus.1.t
     desc = S17_focus.1.d
@@ -21,4 +21,16 @@ country_event = {
 			add_idea = the_vault_research
 		}
     }
+}
+
+country_event = { # Forceful transfer of territory to S17
+	id = S17_focus.2
+	title = S17_focus.2.t
+	desc = S17_focus.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = S17_focus.2a
+	}
 }
