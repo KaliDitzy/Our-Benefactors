@@ -15,8 +15,8 @@ S13 = {
 	color_ui = rgb { 188 144 112 }
 }
 S15 = {
-	color = rgb { 104 85 138 }
-	color_ui = rgb { 94 75 128 }
+	color = rgb { 151 115 156 }
+	color_ui = rgb { 152 116 157 }
 }
 S16 = {
 	color = rgb { 166 208 227 }
@@ -37,6 +37,10 @@ S24 = {
 S26 = {
 	color = rgb { 71 58 138 }
 	color_ui = rgb { 52 39 119 }
+}
+S27 = {
+	color = rgb { 156 181 114 }
+	color_ui = rgb { 169 194 127 }
 }
 PRG = {
 	color = rgb { 45 45 117 }
