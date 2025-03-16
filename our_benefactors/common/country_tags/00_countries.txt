@@ -15,6 +15,8 @@ S14 = "countries/West Europe.txt"
 S15 = "countries/East Europe.txt"
 S16 = "countries/East Europe.txt"
 S17 = "countries/East Europe.txt"
+S24 = "countries/East Europe.txt"
+S27 = "countries/East Europe.txt"
 
 PRG = "countries/East Europe.txt"
 XXX = "countries/Empty.txt"
