@@ -124,7 +124,7 @@ country_event = {
 	}
     
     mean_time_to_happen = {
-		months = 18
+		months = 54
 		modifier = {
 			factor = 0.75
 			has_stability < 0.5
@@ -203,7 +203,7 @@ country_event = {
 	}
     
     mean_time_to_happen = {
-		months = 18
+		months = 54
 		modifier = {
 			factor = 0.75
 			has_stability < 0.5
@@ -283,7 +283,7 @@ country_event = {
 	}
     
     mean_time_to_happen = {
-		months = 6
+		months = 18
 		modifier = {
 			factor = 0.75
 			has_stability < 0.5
@@ -328,7 +328,7 @@ country_event = { # unavoidable agitation
 	}
     
     mean_time_to_happen = {
-		months = 30
+		months = 90
 		modifier = {
 			factor = 0.75
 			resistance_ideology > 0.25
@@ -377,7 +377,7 @@ country_event = { # unavoidable resistance
 	}
     
     mean_time_to_happen = {
-		months = 30
+		months = 90
 		modifier = {
 			factor = 0.75
 			check_variable = { rebel_agitation > 0.125 }
@@ -430,7 +430,7 @@ country_event = { # unavoidable agitation
 	}
     
     mean_time_to_happen = {
-		months = 60
+		months = 180
 		modifier = {
 			factor = 0.75
 			resistance_ideology > 0.125
