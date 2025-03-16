@@ -6,7 +6,8 @@ state = {
 	state_category = enclave
 	
 	history = {
-		owner = XXX
+		owner = S26
+		add_core_of = S26
 		victory_points = { #Zara/Zadar
 			3943 5 
 		}
@@ -16,16 +17,6 @@ state = {
 				naval_base = 1
 			}
 		}
-		
-		
-		
-		start_resistance = CRO #Yugoslavia shouldn't resist occupation
-		set_compliance = 70
-
-		### CHANGED TO A MROE ROBUST SYSTEM
-		##CONTROLLED BY ITALY AT GAME START -> ITALIAN NAMES
-		#set_state_name = STATE_163_ITA
-		#set_province_name = { id = 3943 name = VICTORY_POINTS_3943_ITA }
 	}
 	provinces = {	
 		3943 

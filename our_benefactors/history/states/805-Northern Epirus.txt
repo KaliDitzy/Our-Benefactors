@@ -20,15 +20,6 @@ state={
 		buildings = {
 			infrastructure = 1
 		}
-		
-		
-		
-
-		1939.4.12 = {
-			owner = XXX
-			
-			remove_claim_by = ITA
-		}
 	}
 
 	local_supplies=0.0 

@@ -45,8 +45,13 @@ on_actions = {
 						}
 					}
 				}
-				capital_scope = {
-					set_state_flag = was_combine_capital
+				if = {
+					limit = {
+						has_government = combine
+					}
+					capital_scope = {
+						set_state_flag = was_combine_capital
+					}
 				}
 			}
 		}

@@ -26,9 +26,17 @@ S17 = {
 	color = rgb { 163 26 67 }
 	color_ui = rgb { 107 0 11 }
 }
+S22 = {
+	color = rgb { 58 90 138 }
+	color_ui = rgb { 44 76 124 }
+}
 S24 = {
 	color = rgb { 70 87 56 }
 	color_ui = rgb { 54 71 40 }
+}
+S26 = {
+	color = rgb { 71 58 138 }
+	color_ui = rgb { 52 39 119 }
 }
 PRG = {
 	color = rgb { 45 45 117 }
