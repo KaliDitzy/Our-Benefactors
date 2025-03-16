@@ -10,7 +10,8 @@ state= {
 	state_category = town
 
 	history= {
-		owner = XXX
+		owner = S27
+		add_core_of = S27
 		victory_points = {
 			11842 5
 		}
@@ -21,18 +22,6 @@ state= {
 				naval_base = 3
 				coastal_bunker = 2
 			}
-		}
-		
-
-		1936.1.1.1 = { 
-			if = {
-				limit = { has_dlc = "Battle for the Bosporus" }
-				set_demilitarized_zone = yes
-			}
-		}
-
-		1936.11.9.1 = {
-			set_demilitarized_zone = no
 		}
 	}
 	provinces=
