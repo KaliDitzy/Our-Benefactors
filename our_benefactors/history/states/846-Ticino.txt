@@ -8,7 +8,8 @@ state={
 		aluminium=15 # was: 24 
 	}
 	history={
-		owner = XXX
+		owner = S34
+		add_core_of = S34
 		victory_points = { 9600 1 }
 		buildings = {
 			infrastructure = 2 

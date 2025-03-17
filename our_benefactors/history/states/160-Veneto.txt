@@ -9,7 +9,8 @@ state = {
 	state_category = large_city
 
 	history = {
-		owner = XXX
+		owner = S34
+		add_core_of = S34
 		victory_points = { #Venezia
 			11584 10 
 		}

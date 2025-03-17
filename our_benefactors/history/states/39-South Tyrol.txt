@@ -14,7 +14,8 @@ state = {
 		victory_points = { #Bolzano
 			11598 1
 		}
-		owner = XXX
+		owner = S34
+		add_core_of = S34
 		buildings = {
 			infrastructure = 2 # was 3 before split
 			industrial_complex = 1 #Bolzano's industrial zone started in 1934-35 (Steel meels, Lancia...)

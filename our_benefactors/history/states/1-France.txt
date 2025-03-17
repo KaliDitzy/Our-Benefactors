@@ -7,7 +7,8 @@ state={
 	state_category=town
 
 	history={
-		owner = XXX
+		owner = S34
+		add_core_of = S34
 		victory_points = { 3838 1 }
 		buildings = {
 			infrastructure=2
