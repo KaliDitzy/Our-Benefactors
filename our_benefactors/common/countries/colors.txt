@@ -50,6 +50,10 @@ S27 = {
 	color = rgb { 156 181 114 }
 	color_ui = rgb { 169 194 127 }
 }
+S31 = {
+	color = { 149 45 102 }
+	color_ui = { 1343 30 87 }
+}
 S34 = {
 	color = rgb { 67  127  63 }
 	color_ui = rgb { 58  118  54 }
